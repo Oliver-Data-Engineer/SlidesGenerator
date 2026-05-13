@@ -103,7 +103,7 @@ Após escolher a categoria, você digita o nome do template desejado (ex: `Sakur
 
 ---
 
-**Resultado:** arquivo HTML autocontido salvo localmente, aberto automaticamente no browser, pronto para apresentar, exportar como PDF ou fazer deploy.
+**Resultado:** arquivo HTML autocontido salvo localmente, aberto automaticamente no browser, pronto para apresentar ou exportar como PDF.
 
 ---
 
@@ -120,9 +120,6 @@ Galeria dos 32 templates com wizard de customização.
 ### Compartilhar e exportar
 
 ```bash
-# Deploy para URL pública (Vercel — funciona em qualquer dispositivo)
-bash scripts/deploy.sh ./minha-apresentacao.html
-
 # Exportar como PDF (requer Node.js)
 bash scripts/export-pdf.sh ./minha-apresentacao.html
 
@@ -198,7 +195,7 @@ A Skill gera apresentações em 8 presets visuais fiéis à marca. Abra qualquer
 | **Skill Claude Code** | `/frontend-slides-pt` — gera slides a partir de um prompt |
 | **Guia de marca** | `src/brand/` — cores, tipografia, logos, voz e tom em Markdown |
 | **32 templates adaptados** | beautiful-html-templates com paleta Itaú (`samples/`) |
-| **Scripts prontos** | deploy, PDF, extração de PPTX, screenshots, adaptação de templates |
+| **Scripts prontos** | PDF, extração de PPTX, screenshots, adaptação de templates |
 | **Exemplo gerado** | `examples/skill-star/apresentacao.html` — 16 slides com metodologia STAR |
 
 Para regenerar as amostras adaptadas:
@@ -212,7 +209,7 @@ python scripts/screenshot-presets.py --samples # captura screenshots 1920×1080
 
 ## Requisitos
 
-- **Node.js 18+** — app React + scripts de deploy e PDF
+- **Node.js 18+** — app React + script de exportação PDF
 - **Python 3.8+** — apenas para `scripts/extract-pptx.py` (requer `pip install python-pptx`)
 
 ---

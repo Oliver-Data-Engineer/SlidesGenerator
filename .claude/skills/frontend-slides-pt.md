@@ -412,28 +412,15 @@ Ao converter arquivos PowerPoint:
 
 ## Fase 6: Compartilhar e Exportar (Opcional)
 
-Após entrega, **perguntar:** _"Quer compartilhar a apresentação? Posso fazer deploy para uma URL pública ou exportar como PDF."_
+Após entrega, **perguntar:** _"Quer exportar a apresentação como PDF?"_
 
 Opções:
-- **Deploy para URL** — Link que funciona em qualquer dispositivo
-- **Exportar PDF** — Arquivo para email, Slack, impressão
-- **Ambos**
+- **Exportar PDF** — Arquivo para email, Slack ou impressão
 - **Não, obrigado**
 
 Se o usuário recusar, parar aqui.
 
-### 6A: Deploy para URL (Vercel)
-
-```bash
-bash scripts/deploy.sh <caminho-para-html-ou-pasta>
-```
-
-**Gotchas:**
-- Imagens locais devem estar no mesmo diretório que o HTML
-- Prefira deploy de pasta quando há muitos assets
-- Redeploy atualiza a mesma URL
-
-### 6B: Exportar PDF
+### 6A: Exportar PDF
 
 ```bash
 bash scripts/export-pdf.sh <caminho-para-html> [output.pdf]
@@ -460,7 +447,6 @@ bash scripts/export-pdf.sh <caminho-para-html> [output.pdf] --compact
 | [`html-template.md`](html-template.md) | Arquitetura HTML, JS completo, inline editing | Fase 3 (geração) |
 | [`animation-patterns.md`](animation-patterns.md) | CSS/JS de animações por feeling | Fase 3 (geração) |
 | [`scripts/extract-pptx.py`](../../scripts/extract-pptx.py) | Extração de conteúdo de .pptx | Fase 4 (conversão) |
-| [`scripts/deploy.sh`](../../scripts/deploy.sh) | Deploy no Vercel | Fase 6 (sharing) |
 | [`scripts/export-pdf.sh`](../../scripts/export-pdf.sh) | Exportar PDF | Fase 6 (sharing) |
 | `src/brand/cores.md` | Paleta oficial com hex e CSS vars | Fase 1 e 3 |
 | `src/brand/tipografia.md` | Escala de tipografia, pesos, @font-face | Fase 1 e 3 |

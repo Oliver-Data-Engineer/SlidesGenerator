@@ -119,7 +119,7 @@ Ao adaptar um template da biblioteca `beautiful-html-templates`:
 
 **Passo 5:** Abrir o arquivo no browser e resumir navegação
 
-**Passo 6 (opcional):** Oferecer deploy (Vercel via `scripts/deploy.sh`) ou PDF (`scripts/export-pdf.sh`)
+**Passo 6 (opcional):** Oferecer exportação como PDF (`scripts/export-pdf.sh`)
 
 ### Modo B — Conversão de PPT
 

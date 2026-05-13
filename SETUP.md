@@ -36,7 +36,7 @@ Verifique que os seguintes arquivos existem após o clone:
 - `.claude/commands/frontend-slides-pt.md` — skill de geração de slides
 - `public/templates/` — 32 templates HTML base
 - `samples/` — 32 templates adaptados com paleta Itaú
-- `scripts/` — scripts de deploy, PDF, adaptação e screenshots
+- `scripts/` — scripts de PDF, adaptação e screenshots
 
 Se algum desses não existir, o clone falhou — tente novamente.
 
@@ -110,7 +110,7 @@ Leia `CLAUDE.md` para entender:
 - A estrutura completa de diretórios
 - Como a Skill `/frontend-slides-pt` funciona
 - Os 8 presets visuais da marca Itaú Empresas
-- Como usar os scripts de deploy, PDF e screenshots
+- Como usar os scripts de PDF e screenshots
 
 ---
 
@@ -143,7 +143,6 @@ A Skill vai:
 
 | Script | Uso |
 |--------|-----|
-| `bash scripts/deploy.sh ./apresentacao.html` | Deploy para URL pública via Vercel |
 | `bash scripts/export-pdf.sh ./apresentacao.html` | Exportar como PDF |
 | `python scripts/extract-pptx.py deck.pptx output/` | Extrair conteúdo de .pptx |
 | `python scripts/adapt-templates.py` | Adaptar os 32 templates com paleta Itaú |

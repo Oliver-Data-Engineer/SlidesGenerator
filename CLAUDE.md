@@ -6,7 +6,7 @@ Gerador de slides de apresentação para a marca **Itaú Empresas**. Foco em ger
 ## Stack
 - Frontend: React + Vite + TypeScript
 - Estilização: Tailwind CSS + CSS custom properties (tokens)
-- Exportação: Playwright (PDF via `scripts/export-pdf.sh`), Vercel (deploy via `scripts/deploy.sh`)
+- Exportação: Playwright (PDF via `scripts/export-pdf.sh`)
 
 ---
 
@@ -53,7 +53,6 @@ SlidesGenerator/
 ├── .gitignore
 │
 ├── scripts/                           # Scripts utilitários
-│   ├── deploy.sh                      # Deploy para Vercel (URL pública)
 │   ├── export-pdf.sh                  # Exportar apresentação como PDF
 │   ├── extract-pptx.py                # Extrair conteúdo de arquivos .pptx
 │   └── screenshot-presets.sh          # Gerar screenshots dos 8 presets Itaú
@@ -142,6 +141,5 @@ Skills são prompts de sistema em Markdown que definem comportamentos especializ
 ## Tarefas Frequentes
 - `npm run dev` — inicia o servidor de desenvolvimento (http://localhost:5173)
 - `npm run build` — gera bundle de produção
-- `bash scripts/deploy.sh ./apresentacao.html` — deploy para URL pública
 - `bash scripts/export-pdf.sh ./apresentacao.html` — exportar como PDF
 - `bash scripts/screenshot-presets.sh` — regenerar screenshots dos 8 presets

@@ -40,7 +40,72 @@ No Claude Code:
 /frontend-slides-pt Crie uma apresentação sobre crédito PME, 10 slides, tema executivo
 ```
 
-A Skill lê o guia de marca, gera previews dos 8 estilos disponíveis e entrega o HTML completo pronto para apresentar.
+A Skill lê o guia de marca e abre um diálogo de seleção. Veja como o fluxo funciona:
+
+---
+
+**Passo 1 — Escolha a família de templates:**
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  Família de Templates                                        │
+│                                                             │
+│  ● Itaú Presets                                             │
+│    8 estilos criados para a marca Itaú Empresas             │
+│                                                             │
+│  ○ Beautiful Templates                                      │
+│    32 layouts externos adaptados com cores Itaú             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+**Passo 2a — Se escolher Itaú Presets**, a Skill abre 8 previews animados no browser e pergunta qual você prefere:
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  Preset                                                     │
+│                                                             │
+│  ○ Itaú Escuro      — executivo, fundo azul #1F3B6B         │
+│  ○ Itaú Claro       — corporativo limpo, fundo branco       │
+│  ○ Itaú Split       — painel azul + branco, pitch deck      │
+│  ○ Itaú Laranja     — impacto, fundo #EC7000                │
+│  ● Itaú Tech        — dados e código, fundo #0f1e38         │
+│  ○ Itaú Editorial   — relatórios premium                    │
+│  ○ Bold Signal      — card laranja, fundo escuro            │
+│  ○ Swiss Modern     — clean minimalista, Bauhaus            │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+**Passo 2b — Se escolher Beautiful Templates**, a Skill agrupa os 32 por categoria:
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  Categoria                                                  │
+│                                                             │
+│  ○ Escuros / Dramáticos                                     │
+│    Vellum, Studio, Broadside, 8-Bit Orbit, Pink Script...  │
+│                                                             │
+│  ○ Claros / Editoriais                                      │
+│    Soft Editorial, Monochrome, Cartesian, Playful...        │
+│                                                             │
+│  ● Coloridos / Criativos                                    │
+│    Creative Mode, Block Frame, Daisy Days, Sakura...        │
+│                                                             │
+│  ○ Modernos / Tipográficos                                  │
+│    Neo-Grid Bold, Cobalt Grid, Long Table, Coral...         │
+└─────────────────────────────────────────────────────────────┘
+```
+
+Após escolher a categoria, você digita o nome do template desejado (ex: `Sakura Chroma`) e a Skill adapta o layout com a paleta Itaú e gera a apresentação completa.
+
+---
+
+**Resultado:** arquivo HTML autocontido salvo localmente, aberto automaticamente no browser, pronto para apresentar, exportar como PDF ou fazer deploy.
+
+---
 
 ### Como app React (galeria de templates)
 

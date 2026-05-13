@@ -1,0 +1,37 @@
+{
+  "color": {
+    "brand": {
+      "primary": {
+        "value": "#EC7000",
+        "description": "Laranja Itaú — cor principal da marca",
+        "usage": "CTAs, destaques, fundos de títulos, ícones"
+      },
+      "secondary": {
+        "value": "#000D3C",
+        "description": "Azul Escuro Itaú — cor de profundidade",
+        "usage": "Fundos escuros, textos em light, cabeçalhos"
+      }
+    },
+    "neutral": {
+      "white": { "value": "#FFFFFF", "description": "Branco puro" },
+      "gray-100": { "value": "#F5F5F5", "description": "Cinza muito claro — fundos alternativos" },
+      "gray-300": { "value": "#CCCCCC", "description": "Cinza claro — bordas, divisores" },
+      "gray-500": { "value": "#999999", "description": "Cinza médio — textos secundários" },
+      "gray-700": { "value": "#555555", "description": "Cinza escuro — corpo de texto" },
+      "black": { "value": "#1A1A1A", "description": "Preto suave — títulos, alta ênfase" }
+    },
+    "semantic": {
+      "success": { "value": "#2E7D32", "description": "Sucesso, metas atingidas" },
+      "warning": { "value": "#F57C00", "description": "Atenção, alertas" },
+      "error": { "value": "#C62828", "description": "Erro, pontos críticos" },
+      "info": { "value": "#1565C0", "description": "Informação complementar" }
+    },
+    "slide": {
+      "title-dark-bg": { "value": "#000D3C", "description": "Fundo de slide de título dark" },
+      "title-light-bg": { "value": "#EC7000", "description": "Fundo de slide de título laranja" },
+      "content-bg": { "value": "#FFFFFF", "description": "Fundo de slide de conteúdo" },
+      "section-bg": { "value": "#1A1A1A", "description": "Fundo de slide de seção" },
+      "code-bg": { "value": "#000D3C", "description": "Fundo de slide de código" }
+    }
+  }
+}

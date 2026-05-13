@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Bold Signal — Itaú Empresas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+  <style>
+    @font-face { font-family:'Itau Display Pro';
+      src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Blk.woff2') format('woff2');
+      font-weight:900; font-display:swap; }
+
+    :root {
+      --bg:    #1A1A1A;
+      --text:  #FFFFFF;
+      --accent:#EC7000;
+      --card-text:#1F3B6B;
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{width:100vw;height:100vh;overflow:hidden;
+      background:var(--bg);
+      font-family:'Archivo Black','Itau Display Pro',system-ui,sans-serif;
+      display:flex;align-items:center;justify-content:center;}
+
+    .slide{width:100%;height:100%;display:flex;align-items:center;
+      padding:clamp(2rem,6vw,5rem);position:relative;gap:clamp(2rem,5vw,5rem);}
+
+    .left{flex:1;display:flex;flex-direction:column;justify-content:center;}
+
+    .card{background:var(--accent);padding:clamp(1.5rem,3vw,3rem);
+      opacity:0;animation:slideIn .6s .1s forwards;}
+
+    .card-tag{font-size:clamp(.65rem,1vw,.8rem);font-weight:900;letter-spacing:.12em;
+      text-transform:uppercase;color:rgba(31,59,107,0.65);margin-bottom:clamp(.5rem,1.5vh,1rem);}
+
+    .card h2{font-size:clamp(1.5rem,4vw,3.2rem);font-weight:900;color:var(--card-text);
+      line-height:1.05;letter-spacing:-0.02em;}
+
+    .right{flex:1;display:flex;flex-direction:column;gap:clamp(.75rem,2vh,1.5rem);}
+
+    .tag{font-size:clamp(.6rem,1vw,.75rem);font-weight:900;letter-spacing:.15em;
+      text-transform:uppercase;color:var(--accent);
+      opacity:0;animation:up .5s .4s forwards;}
+
+    h1{font-size:clamp(1.8rem,5vw,4rem);font-weight:900;color:var(--text);line-height:1.05;
+      letter-spacing:-0.02em;opacity:0;animation:up .6s .55s forwards;}
+
+    .sub{font-size:clamp(.8rem,1.8vw,1.2rem);font-weight:400;color:rgba(255,255,255,0.5);
+      line-height:1.5;opacity:0;animation:up .6s .7s forwards;}
+
+    .logo{position:absolute;bottom:clamp(1.5rem,3vh,2.5rem);right:clamp(2rem,5vw,4rem);
+      height:clamp(24px,3vh,36px);opacity:0;animation:up .5s .9s forwards;}
+
+    @keyframes slideIn{from{opacity:0;transform:translateX(-20px)}to{opacity:1;transform:translateX(0)}}
+    @keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="left">
+      <div class="card">
+        <div class="card-tag">Bold Signal</div>
+        <h2>Confiante.<br>Moderno.<br>Itaú.</h2>
+      </div>
+    </div>
+    <div class="right">
+      <span class="tag">Preset Criativo</span>
+      <h1>Alto Impacto<br>em Fundo Escuro</h1>
+      <p class="sub">Card laranja destacado sobre fundo preto — máximo contraste, máxima atenção</p>
+    </div>
+    <img class="logo" src="../../src/assets/logos/logo-itau-branca.png" alt="Itaú Empresas">
+  </div>
+</body>
+</html>

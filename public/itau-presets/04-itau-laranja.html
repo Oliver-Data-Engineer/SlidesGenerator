@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Itaú Laranja — Itaú Empresas</title>
+  <style>
+    @font-face { font-family:'Itau Display Pro';
+      src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Blk.woff2') format('woff2');
+      font-weight:900; font-display:swap; }
+    @font-face { font-family:'Itau Display Pro';
+      src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Lt.woff2') format('woff2');
+      font-weight:300; font-display:swap; }
+
+    :root {
+      --bg:    #EC7000;
+      --text:  #FFFFFF;
+      --accent:#FFFFFF;
+      --sub:   rgba(255,255,255,0.72);
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{width:100vw;height:100vh;overflow:hidden;
+      background:
+        radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 20% 80%, rgba(31,59,107,0.15) 0%, transparent 50%),
+        var(--bg);
+      font-family:'Itau Display Pro',system-ui,sans-serif;
+      display:flex;align-items:center;justify-content:center;}
+
+    .slide{width:100%;height:100%;display:flex;flex-direction:column;
+      justify-content:center;padding:clamp(2rem,6vw,5rem);position:relative;}
+
+    /* Letra decorativa de fundo */
+    .letter-bg{position:absolute;font-family:'Itau Display Pro',system-ui;font-weight:900;
+      font-size:clamp(10rem,35vw,28rem);color:rgba(255,255,255,0.07);
+      right:2%;bottom:-4%;line-height:1;pointer-events:none;user-select:none;}
+
+    .deco-circle{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,0.12);
+      pointer-events:none;}
+
+    .tag{position:absolute;top:clamp(1.5rem,3vh,2.5rem);left:clamp(2rem,5vw,4rem);
+      font-size:clamp(.6rem,1vw,.75rem);font-weight:900;letter-spacing:.15em;
+      text-transform:uppercase;color:rgba(255,255,255,0.6);
+      opacity:0;animation:up .5s .1s forwards;}
+
+    .bar{width:clamp(40px,6vw,80px);height:4px;background:rgba(255,255,255,0.5);
+      margin-bottom:clamp(1rem,2.5vh,2rem);opacity:0;animation:up .5s .3s forwards;}
+
+    h1{font-size:clamp(2rem,6vw,5rem);font-weight:900;color:var(--text);line-height:1.05;
+      letter-spacing:-0.02em;opacity:0;animation:up .6s .5s forwards;}
+
+    .sub{font-size:clamp(.9rem,2vw,1.4rem);font-weight:300;color:var(--sub);
+      margin-top:clamp(.75rem,2vh,1.5rem);opacity:0;animation:up .6s .7s forwards;}
+
+    .logo{position:absolute;bottom:clamp(1.5rem,3vh,2.5rem);right:clamp(2rem,5vw,4rem);
+      height:clamp(24px,3vh,36px);opacity:0;animation:up .5s .9s forwards;}
+
+    @keyframes up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="deco-circle" style="width:min(42vw,420px);height:min(42vw,420px);left:-12%;top:-18%;"></div>
+    <div class="deco-circle" style="width:min(22vw,220px);height:min(22vw,220px);right:10%;bottom:12%;"></div>
+    <span class="letter-bg">I</span>
+    <span class="tag">Itaú Laranja</span>
+    <div class="bar"></div>
+    <h1>Alta Energia<br>Alto Impacto</h1>
+    <p class="sub">Seções de impacto, CTAs e lançamentos — fundo #EC7000</p>
+    <img class="logo" src="../../src/assets/logos/logo-itau-branca.png" alt="Itaú Empresas">
+  </div>
+</body>
+</html>

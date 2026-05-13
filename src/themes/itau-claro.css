@@ -1,0 +1,66 @@
+/* Tema Itaú Empresas — Light */
+
+/* Importa as mesmas @font-face do tema escuro */
+@import './itau-escuro.css';
+
+/* Sobrescreve apenas as variáveis de cor para o tema claro */
+:root {
+  --color-bg: #FFFFFF;
+  --color-bg-alt: #F5F5F5;
+  --color-surface: #FFFFFF;
+  --color-text-primary: #1A1A1A;
+  --color-text-secondary: #555555;
+  --color-text-muted: #999999;
+  --color-accent: #EC7000;
+  --color-border: rgba(0, 0, 0, 0.12);
+}
+
+.reveal {
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+}
+
+.reveal h1 {
+  color: var(--color-neutral-black);
+}
+
+.reveal h2 {
+  color: var(--color-brand-secondary);
+}
+
+.reveal h3 {
+  color: var(--color-brand-secondary);
+}
+
+.reveal p, .reveal li {
+  color: var(--color-text-primary);
+}
+
+.reveal code {
+  background: var(--color-bg-alt);
+  color: var(--color-brand-secondary);
+}
+
+.reveal pre code {
+  background: var(--color-bg-alt);
+  border-left: 4px solid var(--color-accent);
+  color: var(--color-text-primary);
+}
+
+.reveal .slides section.slide-titulo {
+  background: var(--color-brand-secondary);
+}
+
+.reveal .slides section.slide-titulo h1,
+.reveal .slides section.slide-titulo h2,
+.reveal .slides section.slide-titulo p {
+  color: var(--color-neutral-white);
+}
+
+.slide-footer {
+  border-top: 1px solid var(--color-border);
+}
+
+.slide-footer .page-number {
+  color: var(--color-text-muted);
+}

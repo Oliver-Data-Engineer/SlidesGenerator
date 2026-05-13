@@ -1,0 +1,29 @@
+{
+  "spacing": {
+    "base": "8px",
+    "scale": {
+      "1": { "value": "4px", "description": "Micro — separação de ícones inline" },
+      "2": { "value": "8px", "description": "XS — gap entre elementos inline" },
+      "3": { "value": "16px", "description": "SM — padding pequeno, gap entre bullets" },
+      "4": { "value": "24px", "description": "MD — gap padrão entre seções internas" },
+      "5": { "value": "32px", "description": "LG — separação entre blocos de conteúdo" },
+      "6": { "value": "48px", "description": "XL — entre título e corpo" },
+      "7": { "value": "64px", "description": "2XL — entre seções maiores" },
+      "8": { "value": "96px", "description": "3XL — margens de slide" }
+    },
+    "slide": {
+      "margin-horizontal": { "value": "80px", "description": "Margem lateral da área segura" },
+      "margin-top": { "value": "60px", "description": "Margem superior da área segura" },
+      "margin-bottom": { "value": "60px", "description": "Margem inferior (acima do rodapé)" },
+      "footer-height": { "value": "48px", "description": "Altura da zona de rodapé" },
+      "card-padding": { "value": "32px", "description": "Padding interno de cards e caixas" },
+      "column-gap-2col": { "value": "48px", "description": "Gap entre 2 colunas iguais" },
+      "column-gap-3col": { "value": "32px", "description": "Gap entre 3 colunas" }
+    },
+    "logo": {
+      "min-height-footer": { "value": "32px", "description": "Altura mínima do logo no rodapé" },
+      "min-height-title": { "value": "48px", "description": "Altura mínima do logo em slide de título" },
+      "breathing-space": { "value": "1 symbol-height", "description": "Área de respiro ao redor do logo" }
+    }
+  }
+}

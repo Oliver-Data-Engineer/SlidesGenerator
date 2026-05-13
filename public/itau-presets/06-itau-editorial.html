@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Itaú Editorial — Itaú Empresas</title>
+  <style>
+    @font-face { font-family:'Itau Display Pro';
+      src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Blk.woff2') format('woff2');
+      font-weight:900; font-display:swap; }
+    @font-face { font-family:'Itau Display Pro';
+      src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Lt.woff2') format('woff2');
+      font-weight:300; font-display:swap; }
+    @font-face { font-family:'Itau Display Pro';
+      src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Rg.woff2') format('woff2');
+      font-weight:400; font-display:swap; }
+
+    :root {
+      --bg:    #FAFAF8;
+      --text:  #1A1A1A;
+      --accent:#EC7000;
+      --blue:  #1F3B6B;
+      --sub:   #666666;
+      --rule:  #CCCCCC;
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{width:100vw;height:100vh;overflow:hidden;
+      background:var(--bg);
+      font-family:'Itau Display Pro',system-ui,sans-serif;
+      display:flex;align-items:center;justify-content:center;}
+
+    .slide{width:100%;height:100%;display:flex;flex-direction:column;
+      justify-content:center;padding:clamp(2rem,6vw,5rem);position:relative;}
+
+    .rule-top{position:absolute;top:0;left:0;right:0;height:4px;background:var(--accent);}
+
+    .tag{position:absolute;top:clamp(1.5rem,3vh,2.5rem);left:clamp(2rem,5vw,4rem);
+      font-size:clamp(.6rem,1vw,.75rem);font-weight:900;letter-spacing:.15em;
+      text-transform:uppercase;color:var(--accent);
+      opacity:0;animation:up .5s .1s forwards;}
+
+    .slide-num{position:absolute;top:clamp(1.5rem,3vh,2.5rem);right:clamp(2rem,5vw,4rem);
+      font-size:clamp(.6rem,1vw,.75rem);font-weight:300;color:var(--sub);letter-spacing:.08em;
+      opacity:0;animation:up .5s .1s forwards;}
+
+    hr.divider{border:none;border-top:1px solid var(--rule);
+      margin-bottom:clamp(1.5rem,3vh,2.5rem);
+      opacity:0;animation:up .5s .25s forwards;}
+
+    h1{font-size:clamp(2.2rem,7vw,5.5rem);font-weight:900;color:var(--blue);line-height:1.0;
+      letter-spacing:-0.025em;opacity:0;animation:up .7s .45s forwards;}
+
+    h1 em{font-style:normal;color:var(--accent);}
+
+    .sub{font-size:clamp(.85rem,1.8vw,1.3rem);font-weight:300;color:var(--sub);
+      line-height:1.7;margin-top:clamp(1rem,2.5vh,2rem);
+      border-left:3px solid var(--accent);padding-left:clamp(.75rem,1.5vw,1.25rem);
+      opacity:0;animation:up .6s .7s forwards;}
+
+    .logo{position:absolute;bottom:clamp(1.5rem,3vh,2.5rem);right:clamp(2rem,5vw,4rem);
+      height:clamp(24px,3vh,36px);opacity:0;animation:up .5s .9s forwards;}
+
+    @keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="rule-top"></div>
+    <span class="tag">Itaú Editorial</span>
+    <span class="slide-num">01 / 12</span>
+    <hr class="divider">
+    <h1>Relatórios<br><em>Premium</em></h1>
+    <p class="sub">Hierarquia tipográfica forte, pull quotes e regras editoriais —<br>para stakeholders externos e relatórios anuais</p>
+    <img class="logo" src="../../src/assets/logos/logo-itau-azul-escuro.png" alt="Itaú Empresas">
+  </div>
+</body>
+</html>

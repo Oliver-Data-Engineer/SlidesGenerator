@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slides em Segundos — Skill frontend-slides-pt | Itaú Empresas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* === @FONT-FACE: ITAU DISPLAY PRO (LOCAL) === */
+    @font-face {
+      font-family: 'Itau Display Pro';
+      src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Lt.woff2') format('woff2');
+      font-weight: 300; font-display: swap;
+    }
+    @font-face {
+      font-family: 'Itau Display Pro';
+      src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Rg.woff2') format('woff2');
+      font-weight: 400; font-display: swap;
+    }
+    @font-face {
+      font-family: 'Itau Display Pro';
+      src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Bd.woff2') format('woff2');
+      font-weight: 700; font-display: swap;
+    }
+    @font-face {
+      font-family: 'Itau Display Pro';
+      src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Blk.woff2') format('woff2');
+      font-weight: 900; font-display: swap;
+    }
+
+    /* === CSS CUSTOM PROPERTIES === */
+    :root {
+      --itau-orange:   #EC7000;
+      --itau-blue:     #1F3B6B;
+      --itau-white:    #FFFFFF;
+      --itau-black:    #1A1A1A;
+      --itau-gray-100: #F5F5F5;
+      --itau-gray-500: #999999;
+      --itau-tech:     #0f1e38;
+
+      --accent:        #EC7000;
+      --font-display:  'Itau Display Pro', 'Helvetica Neue', Arial, sans-serif;
+      --font-body:     'Itau Display Pro', 'Helvetica Neue', Arial, sans-serif;
+      --font-mono:     'JetBrains Mono', 'Fira Code', monospace;
+
+      --title-size:    clamp(1.8rem, 5.5vw, 4.5rem);
+      --h2-size:       clamp(1.3rem, 3.2vw, 2.4rem);
+      --h3-size:       clamp(1rem, 2.2vw, 1.6rem);
+      --body-size:     clamp(0.78rem, 1.4vw, 1.05rem);
+      --small-size:    clamp(0.62rem, 0.95vw, 0.82rem);
+      --stat-size:     clamp(2.2rem, 7vw, 4.5rem);
+
+      --slide-padding: clamp(1.5rem, 5vw, 5rem);
+      --content-gap:   clamp(0.75rem, 2vw, 2rem);
+      --element-gap:   clamp(0.35rem, 1vw, 1rem);
+
+      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+      --duration-normal: 0.55s;
+      --duration-slow:   0.85s;
+    }
+
+    /* === BASE RESET === */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    /* ============================================================
+       VIEWPORT-BASE.CSS — COMPLETO (OBRIGATÓRIO)
+       ============================================================ */
+    html, body { height: 100%; overflow-x: hidden; }
+    html { scroll-snap-type: y mandatory; scroll-behavior: smooth; }
+
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      height: 100dvh;
+      overflow: hidden;
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .slide-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-height: 100%;
+      overflow: hidden;
+      padding: var(--slide-padding);
+    }
+    .card, .container, .content-box {
+      max-width: min(90vw, 1000px);
+      max-height: min(80vh, 700px);
+    }
+    .feature-list, .bullet-list { gap: clamp(0.4rem, 1vh, 1rem); }
+    .feature-list li, .bullet-list li { font-size: var(--body-size); line-height: 1.4; }
+    img, .image-container { max-width: 100%; max-height: min(50vh, 400px); object-fit: contain; }
+
+    @media (max-height: 700px) {
+      :root {
+        --slide-padding: clamp(0.75rem, 3vw, 2rem);
+        --content-gap:   clamp(0.4rem, 1.5vw, 1rem);
+        --title-size:    clamp(1.25rem, 4.5vw, 2.5rem);
+        --h2-size:       clamp(1rem, 3vw, 1.75rem);
+      }
+    }
+    @media (max-height: 600px) {
+      :root {
+        --slide-padding: clamp(0.5rem, 2.5vw, 1.5rem);
+        --content-gap:   clamp(0.3rem, 1vw, 0.75rem);
+        --title-size:    clamp(1.1rem, 4vw, 2rem);
+        --body-size:     clamp(0.7rem, 1.2vw, 0.95rem);
+      }
+      .nav-dots, .keyboard-hint { display: none; }
+    }
+    @media (max-height: 500px) {
+      :root {
+        --slide-padding: clamp(0.4rem, 2vw, 1rem);
+        --title-size:    clamp(1rem, 3.5vw, 1.5rem);
+        --h2-size:       clamp(0.9rem, 2.5vw, 1.25rem);
+        --body-size:     clamp(0.65rem, 1vw, 0.85rem);
+      }
+    }
+    @media (max-width: 600px) {
+      :root { --title-size: clamp(1.25rem, 7vw, 2.5rem); }
+      .stats-grid { grid-template-columns: 1fr 1fr !important; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.2s !important; }
+      html { scroll-behavior: auto; }
+    }
+    /* ============================================================ */
+
+    /* === TIPOGRAFIA === */
+    body { font-family: var(--font-body); background: #1F3B6B; color: #FFFFFF; }
+    h1 { font-family: var(--font-display); font-weight: 900; line-height: 1.05; }
+    h2 { font-family: var(--font-display); font-weight: 900; line-height: 1.1; }
+    h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.2; }
+    p, li { font-family: var(--font-body); font-weight: 400; line-height: 1.5; }
+
+    /* === ANIMAÇÕES === */
+    .reveal {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity var(--duration-normal) var(--ease-out-expo),
+                  transform var(--duration-normal) var(--ease-out-expo);
+    }
+    .slide.visible .reveal { opacity: 1; transform: translateY(0); }
+    .reveal:nth-child(1) { transition-delay: 0.05s; }
+    .reveal:nth-child(2) { transition-delay: 0.15s; }
+    .reveal:nth-child(3) { transition-delay: 0.25s; }
+    .reveal:nth-child(4) { transition-delay: 0.35s; }
+    .reveal:nth-child(5) { transition-delay: 0.45s; }
+    .reveal:nth-child(6) { transition-delay: 0.55s; }
+
+    .reveal-scale {
+      opacity: 0; transform: scale(0.92);
+      transition: opacity var(--duration-normal) var(--ease-out-expo),
+                  transform var(--duration-normal) var(--ease-out-expo);
+      transition-delay: 0.3s;
+    }
+    .slide.visible .reveal-scale { opacity: 1; transform: scale(1); }
+
+    .reveal-left {
+      opacity: 0; transform: translateX(-36px);
+      transition: opacity var(--duration-normal) var(--ease-out-expo),
+                  transform var(--duration-normal) var(--ease-out-expo);
+    }
+    .slide.visible .reveal-left { opacity: 1; transform: translateX(0); }
+
+    /* === COMPONENTES === */
+    .accent-bar {
+      width: clamp(40px, 5vw, 64px);
+      height: 4px;
+      background: var(--accent);
+      margin-bottom: var(--content-gap);
+    }
+    .tag-label {
+      font-size: var(--small-size);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: var(--element-gap);
+    }
+
+    /* Bullet list */
+    .bullet-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: clamp(8px, 1.3vh, 16px);
+    }
+    .bullet-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: var(--body-size);
+      line-height: 1.45;
+    }
+    .bullet-list li::before {
+      content: '';
+      display: block;
+      min-width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      margin-top: 0.5em;
+      flex-shrink: 0;
+    }
+    .bullet-list li strong { color: var(--accent); font-weight: 700; }
+
+    /* Stats */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(10px, 1.8vw, 20px);
+      width: 100%;
+    }
+    .stat-card {
+      border-top: 3px solid var(--accent);
+      padding: clamp(14px, 2.2vw, 26px) clamp(12px, 1.8vw, 22px);
+      border-radius: 0 0 4px 4px;
+    }
+    .stat-value {
+      font-family: var(--font-display);
+      font-size: var(--stat-size);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    .stat-label {
+      font-size: var(--small-size);
+      margin-top: 6px;
+      line-height: 1.4;
+    }
+
+    /* Footer */
+    .slide-footer {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: clamp(44px, 6vh, 64px);
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 14px;
+      padding: 0 var(--slide-padding);
+      border-top: 1px solid rgba(255,255,255,0.10);
+    }
+    .slide-footer .page-num {
+      font-size: var(--small-size);
+      font-weight: 300;
+      opacity: 0.4;
+    }
+    .slide-footer .logo-itau {
+      height: clamp(22px, 3vh, 34px);
+      width: auto;
+    }
+
+    /* Nav dots */
+    .nav-dots {
+      position: fixed;
+      right: clamp(12px, 2vw, 20px);
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      z-index: 100;
+    }
+    .nav-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.3);
+      cursor: pointer;
+      border: none;
+      transition: background 0.25s, transform 0.25s;
+    }
+    .nav-dot.active { background: var(--accent); transform: scale(1.5); }
+
+    /* Progress bar */
+    .progress-bar {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      background: var(--accent);
+      width: 0%;
+      transition: width 0.3s ease;
+      z-index: 200;
+    }
+
+    /* Keyboard hint */
+    .keyboard-hint {
+      position: fixed;
+      bottom: clamp(12px, 2vh, 20px);
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: clamp(0.58rem, 0.85vw, 0.72rem);
+      color: rgba(255,255,255,0.22);
+      font-family: var(--font-mono);
+      letter-spacing: 0.05em;
+      z-index: 50;
+      pointer-events: none;
+    }
+
+    /* ============================================================
+       TEMAS POR SLIDE
+       ============================================================ */
+
+    /* Azul escuro (padrão) */
+    .slide-dark {
+      background:
+        radial-gradient(ellipse at 15% 85%, rgba(236,112,0,0.10) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 15%, rgba(255,255,255,0.03) 0%, transparent 50%),
+        #1F3B6B;
+    }
+
+    /* Branco / Itaú Claro */
+    .slide-light { background: #FFFFFF; }
+    .slide-light .tag-label  { color: #EC7000; }
+    .slide-light h2          { color: #1F3B6B; }
+    .slide-light .accent-bar { background: #EC7000; }
+    .slide-light .bullet-list li          { color: #1A1A1A; }
+    .slide-light .bullet-list li::before  { background: #EC7000; }
+    .slide-light .bullet-list li strong   { color: #EC7000; }
+    .slide-light .slide-footer            { border-top-color: rgba(0,0,0,0.08); }
+    .slide-light .page-num                { color: #555555; }
+
+    /* Laranja — seção de impacto */
+    .slide-orange {
+      background:
+        radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 20% 80%, rgba(31,59,107,0.15) 0%, transparent 50%),
+        #EC7000;
+    }
+    .slide-orange .tag-label    { color: rgba(255,255,255,0.60); }
+    .slide-orange h2            { color: #FFFFFF; }
+    .slide-orange p             { color: rgba(255,255,255,0.75); }
+    .slide-orange .slide-footer { border-top-color: rgba(255,255,255,0.15); }
+    .slide-orange .page-num     { color: rgba(255,255,255,0.35); }
+
+    /* Tech / código */
+    .slide-tech {
+      background-color: #0f1e38;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .slide-tech h2              { color: #E8EDF5; }
+    .slide-tech .tag-label      { color: #EC7000; }
+    .slide-tech .accent-bar     { background: #EC7000; }
+    .slide-tech .bullet-list li         { color: #C5CDE6; }
+    .slide-tech .bullet-list li::before { background: #EC7000; }
+    .slide-tech .bullet-list li strong  { color: #EC7000; }
+    .slide-tech .slide-footer           { border-top-color: rgba(255,255,255,0.06); }
+
+    /* Encerramento */
+    .slide-closing {
+      background:
+        radial-gradient(ellipse at 15% 85%, rgba(236,112,0,0.16) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 15%, rgba(255,255,255,0.04) 0%, transparent 50%),
+        #1F3B6B;
+    }
+
+    /* ============================================================
+       COMPONENTES ESPECIAIS
+       ============================================================ */
+
+    /* Letra decorativa de fundo (slides de seção) */
+    .letter-bg {
+      position: absolute;
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(10rem, 35vw, 26rem);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+      right: 3%;
+      bottom: -4%;
+    }
+    .slide-orange .letter-bg { color: rgba(255,255,255,0.07); }
+    .slide-dark   .letter-bg { color: rgba(255,255,255,0.04); }
+
+    /* Círculos decorativos */
+    .deco-circle {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.10);
+      pointer-events: none;
+    }
+
+    /* Badge de step */
+    .step-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(236,112,0,0.12);
+      border: 1px solid rgba(236,112,0,0.30);
+      color: #EC7000;
+      padding: 4px 14px;
+      border-radius: 100px;
+      font-size: var(--small-size);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: var(--element-gap);
+    }
+
+    /* Bloco de código */
+    .code-block {
+      background: rgba(0,0,0,0.45);
+      border-left: 4px solid #EC7000;
+      border-radius: 0 4px 4px 0;
+      padding: clamp(14px, 2vw, 22px);
+      font-family: var(--font-mono);
+      font-size: clamp(0.68rem, 1.25vw, 0.96rem);
+      color: #C5CDE6;
+      line-height: 1.75;
+      overflow: hidden;
+      max-height: min(46vh, 340px);
+    }
+    .code-prompt   { color: #EC7000; font-weight: 700; user-select: none; }
+    .code-command  { color: #E8EDF5; }
+    .code-comment  { color: rgba(197,205,230,0.42); }
+    .code-hi       { color: #EC7000; }
+
+    /* Etapas do fluxo */
+    .flow-steps { display: flex; flex-direction: column; gap: clamp(8px, 1.4vh, 14px); }
+    .flow-step {
+      display: flex;
+      align-items: flex-start;
+      gap: clamp(12px, 1.4vw, 18px);
+    }
+    .flow-num {
+      min-width: clamp(26px, 2.8vw, 34px);
+      height: clamp(26px, 2.8vw, 34px);
+      background: #EC7000;
+      color: #FFFFFF;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: var(--small-size);
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+    .flow-text {
+      font-size: var(--body-size);
+      color: #C5CDE6;
+      line-height: 1.4;
+      padding-top: 3px;
+    }
+    .flow-text strong { color: #EC7000; }
+
+    /* Cards de próximos passos */
+    .next-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+      gap: clamp(10px, 1.8vw, 18px);
+      width: 100%;
+    }
+    .next-card {
+      background: rgba(255,255,255,0.05);
+      border-left: 3px solid #EC7000;
+      padding: clamp(12px, 1.8vw, 20px) clamp(10px, 1.5vw, 16px);
+      border-radius: 0 4px 4px 0;
+    }
+    .next-card .nc-title {
+      font-size: var(--body-size);
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 4px;
+    }
+    .next-card .nc-desc {
+      font-size: var(--small-size);
+      color: rgba(255,255,255,0.50);
+      line-height: 1.4;
+    }
+
+    /* CTA pulsante */
+    .cta-cmd {
+      display: inline-block;
+      background: rgba(236,112,0,0.12);
+      border: 1px solid rgba(236,112,0,0.35);
+      color: #EC7000;
+      font-family: var(--font-mono);
+      font-size: clamp(0.78rem, 1.4vw, 1.05rem);
+      padding: clamp(8px, 1vw, 14px) clamp(16px, 2.2vw, 28px);
+      border-radius: 4px;
+      margin-top: var(--content-gap);
+      animation: pulse-orange 2.5s ease-in-out infinite;
+    }
+    @keyframes pulse-orange {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(236,112,0,0.4); }
+      50%       { box-shadow: 0 0 0 12px rgba(236,112,0,0); }
+    }
+
+    /* Slide de métricas (laranja) */
+    .slide-metrics {
+      background: #EC7000;
+    }
+    .slide-metrics .tag-label    { color: rgba(255,255,255,0.60); }
+    .slide-metrics h2            { color: #FFFFFF; }
+    .slide-metrics .accent-bar   { background: rgba(255,255,255,0.35); }
+    .slide-metrics .stat-card    { background: rgba(255,255,255,0.12); border-top-color: rgba(255,255,255,0.45); }
+    .slide-metrics .stat-value   { color: #FFFFFF; }
+    .slide-metrics .stat-label   { color: rgba(255,255,255,0.72); }
+    .slide-metrics .slide-footer { border-top-color: rgba(255,255,255,0.15); }
+    .slide-metrics .page-num     { color: rgba(255,255,255,0.35); }
+  </style>
+</head>
+<body>
+
+  <div class="progress-bar" id="progressBar"></div>
+  <nav class="nav-dots" id="navDots" aria-label="Navegação de slides"></nav>
+  <div class="keyboard-hint">↑ ↓ &nbsp;·&nbsp; setas &nbsp;·&nbsp; espaço</div>
+
+  <!-- ============================================================
+       01 — TÍTULO
+       ============================================================ -->
+  <section class="slide slide-dark" aria-label="Título">
+    <div class="slide-content">
+      <div class="tag-label reveal">Itaú Empresas &nbsp;·&nbsp; Claude Code</div>
+      <div class="accent-bar reveal"></div>
+      <h1 class="reveal" style="font-size: var(--title-size); color: #FFFFFF; letter-spacing: -0.02em;">
+        Slides em<br><span style="color: #EC7000;">Segundos</span>
+      </h1>
+      <p class="reveal" style="font-size: var(--h3-size); font-weight: 300; color: rgba(255,255,255,0.62); margin-top: var(--element-gap); max-width: min(52ch, 90%);">
+        Como a Skill <code style="font-family: var(--font-mono); font-size: 0.82em; color: #EC7000; background: rgba(236,112,0,0.12); padding: 2px 8px; border-radius: 3px;">frontend-slides-pt</code> elimina o trabalho manual em apresentações do dia a dia
+      </p>
+      <p class="reveal" style="font-size: var(--small-size); font-weight: 300; opacity: 0.38; margin-top: auto;">
+        Guilherme Oliveira &nbsp;·&nbsp; Maio 2026
+      </p>
+    </div>
+    <footer class="slide-footer">
+      <span class="page-num">01</span>
+      <img class="logo-itau" src="../../src/assets/logos/logo-itau-branca.png" alt="Itaú Empresas">
+    </footer>
+  </section>
+
+  <!-- ============================================================
+       02 — AGENDA
+       ============================================================ -->
+  <section class="slide slide-light" aria-label="Agenda">
+    <div class="slide-content">
+      <div class="tag-label reveal">Agenda</div>
+      <h2 class="reveal">O que vamos ver</h2>
+      <div class="accent-bar reveal"></div>
+      <ul class="bullet-list" style="margin-top: var(--element-gap);">
+        <li class="reveal"><strong>S — Situação:</strong> O custo oculto de criar apresentações manualmente</li>
+        <li class="reveal"><strong>T — Tarefa:</strong> Um assistente que conhece nossa marca</li>
+        <li class="reveal"><strong>A — Ação:</strong> A Skill <code style="font-family: var(--font-mono); font-size: 0.85em; color: #EC7000; background: rgba(236,112,0,0.08); padding: 1px 6px; border-radius: 3px;">frontend-slides-pt</code> em detalhes</li>
+        <li class="reveal"><strong>R — Resultado:</strong> Apresentações prontas em minutos</li>
+        <li class="reveal"><strong>Demo:</strong> Como invocar a Skill agora mesmo</li>
+      </ul>
+    </div>
+    <footer class="slide-footer" style="border-top-color: rgba(0,0,0,0.08);">
+      <span class="page-num" style="color: #555555;">02</span>
+      <img class="logo-itau" src="../../src/assets/logos/logo-itau-laranja.png" alt="Itaú Empresas">
+    </footer>
+  </section>
+
+  <!-- ============================================================
+       03 — SEÇÃO S (LARANJA)
+       ============================================================ -->
+  <section class="slide slide-orange" aria-label="Situação">
+    <div class="deco-circle" style="width: min(42vw,420px); height: min(42vw,420px); left: -12%; top: -18%;"></div>
+    <div class="deco-circle" style="width: min(22vw,220px); height: min(22vw,220px); right: 10%; bottom: 12%;"></div>
+    <span class="letter-bg">S</span>
+    <div class="slide-content" style="align-items: center; text-align: center;">
+      <div class="tag-label reveal">Situação</div>
+      <h2 class="reveal" style="font-size: var(--title-size); max-width: min(18ch, 90%);">
+        Criar apresentações<br>consome tempo precioso
+      </h2>
+      <p class="reveal" style="font-size: var(--h3-size); font-weight: 300; margin-top: var(--element-gap); max-width: min(52ch, 90%);">
+        Cada reunião exige slides. Cada slide exige horas de trabalho<br>em ferramentas que não conhecem nossa marca.
+      </p>
+    </div>
+    <footer class="slide-footer">
+      <span class="page-num">03</span>
+      <img class="logo-itau" src="../../src/assets/logos/logo-itau-branca.png" alt="Itaú Empresas">
+    </footer>
+  </section>
+
+  <!-- ============================================================
+       04 — SITUAÇÃO: DETALHE
+       ============================================================ -->
+  <section class="slide slide-light" aria-label="Situação em detalhe">
+    <div class="slide-content">
+      <div class="tag-label reveal">Situação</div>
+      <h2 class="reveal">Cada apresentação custava horas de esforço manual</h2>
+      <div class="accent-bar reveal"></div>
+      <ul class="bullet-list" style="margin-top: var(--element-gap);">
+        <li class="reveal">Replicar paleta, fontes e logos <strong>manualmente</strong> a cada nova apresentação</li>
+        <li class="reveal">Risco constante de <strong>inconsistência de marca</strong> entre equipes e versões</li>
+        <li class="reveal">Foco no design em vez do <strong>conteúdo que importa</strong> para o negócio</li>
+        <li class="reveal">Iterações lentas: revisar um slide demora mais do que criá-lo</li>
+        <li class="reveal">Dependência de designers para ajustes que deveriam ser imediatos</li>
+      </ul>
+    </div>
+    <footer class="slide-footer" style="border-top-color: rgba(0,0,0,0.08);">
+      <span class="page-num" style="color: #555555;">04</span>
+      <img class="logo-itau" src="../../src/assets/logos/logo-itau-laranja.png" alt="Itaú Empresas">
+    </footer>
+    <aside hidden>Speaker notes: Aqui mostro o problema real — o tempo gasto formatando supera o tempo pensando no conteúdo. Vale destacar que inconsistência de marca tem custo reputacional direto. Transição: "Foi esse problema que nos levou a construir uma solução diferente."</aside>
+  </section>
+
+  <!-- ============================================================
+       05 — SEÇÃO T (AZUL)
+       ============================================================ -->
+  <section class="slide slide-dark" aria-label="Tarefa">
+    <span class="letter-bg">T</span>
+    <div class="slide-content" style="align-items: center; text-align: center;">
+      <div class="tag-label reveal">Tarefa</div>
+      <h2 class="reveal" style="font-size: var(--title-size); max-width: min(20ch, 90%);">
+        Um assistente que conhece<br>a marca tão bem quanto<br>o time de design
+      </h2>
+      <p class="reveal" style="font-size: var(--h3-size); font-weight: 300; color: rgba(255,255,255,0.60); margin-top: var(--element-gap); max-width: min(55ch, 90%);">
+        Gerar apresentações completas, dentro do padrão Itaú Empresas,<br>a partir de um único prompt em linguagem natural.
+      </p>
+    </div>
+    <footer class="slide-footer">
+      <span class="page-num">05</span>
+      <img class="logo-itau" src="../../src/assets/logos/logo-itau-branca.png" alt="Itaú Empresas">
+    </footer>
+  </section>
+
+  <!-- ============================================================
+       06 — TAREFA: DETALHE
+       ============================================================ -->
+  <section class="slide slide-light" aria-label="Tarefa em detalhe">
+    <div class="slide-content">
+      <div class="tag-label reveal">Tarefa</div>
+      <h2 class="reveal">Cinco requisitos não negociáveis para a solução</h2>
+      <div class="accent-bar reveal"></div>
+      <ul class="bullet-list" style="margin-top: var(--element-gap);">
+        <li class="reveal">Respeitar integralmente o <strong>guia de marca Itaú Empresas</strong> em cada slide gerado</li>
+        <li class="reveal">Garantir <strong>viewport fitting</strong> e animações sem overflow em qualquer resolução</li>
+        <li class="reveal">Entregar HTML autocontido, <strong>sem dependências externas</strong> de runtime</li>
+        <li class="reveal">Suportar <strong>exportação para PDF</strong> e deploy imediato com script pronto</li>
+        <li class="reveal">Funcionar com teclado, touch e scroll wheel <strong>sem configuração extra</strong></li>
+      </ul>
+    </div>
+    <footer class="slide-footer" style="border-top-color: rgba(0,0,0,0.08);">
+      <span class="page-num" style="color: #555555;">06</span>
+      <img class="logo-itau" src="../../src/assets/logos/logo-itau-laranja.png" alt="Itaú Empresas">
+    </footer>
+    <aside hidden>Speaker notes: O HTML autocontido foi uma decisão crítica — permite compartilhar a apresentação como arquivo único sem preocupação com CDNs ou dependências. Transição: "E foi exatamente isso que a Skill frontend-slides-pt entregou."</aside>
+  </section>
+
+  <!-- ============================================================
+       07 — SEÇÃO A (LARANJA)
+       ============================================================ -->
+  <section class="slide slide-orange" aria-label="Ação">
+    <div class="deco-circle" style="width: min(50vw,500px); height: min(50vw,500px); right: -16%; bottom: -16%;"></div>
+    <div class="deco-circle" style="width: min(18vw,180px); height: min(18vw,180px); left: 6%; top: 8%;"></div>
+    <span class="letter-bg">A</span>
+    <div class="slide-content" style="align-items: center; text-align: center;">
+      <div class="tag-label reveal">Ação</div>
+      <h2 class="reveal" style="font-size: var(--title-size);">
+        A Skill<br>
+        <code style="font-family: var(--font-mono); font-size: 0.55em; background: rgba(255,255,255,0.14); padding: 6px 14px; border-radius: 4px; white-space: nowrap;">frontend-slides-pt</code>
+      </h2>
+      <p class="reveal" style="font-size: var(--h3-size); font-weight: 300; margin-top: var(--element-gap); max-width: min(52ch, 90%);">
+        Um especialista de marca embutido no Claude Code — lê o guia, escolhe o estilo e gera o HTML completo.
+      </p>
+    </div>
+    <footer class="slide-footer">
+      <span class="page-num">07</span>
+      <img class="logo-itau" src="../../src/assets/logos/logo-itau-branca.png" alt="Itaú Empresas">
+    </footer>
+  </section>
+
+  <!-- ============================================================
+       08 — AÇÃO: COMO FUNCIONA
+       ============================================================ -->
+  <section class="slide slide-dark" aria-label="Como a Skill funciona">
+    <div class="slide-content">
+      <div class="tag-label reveal">Ação</div>
+      <h2 class="reveal">A Skill opera em 3 modos e 6 passos definidos</h2>
+      <div class="accent-bar reveal"></div>
+      <ul class="bullet-list" style="margin-top: var(--element-gap);">
+        <li class="reveal">Ler automaticamente o <strong>guia de marca completo</strong> antes de qualquer geração</li>
+        <li class="reveal">Gerar <strong>3 previews de estilo</strong> distintos para o usuário escolher</li>
+        <li class="reveal">Criar HTML autocontido com animações, navegação e logo correto por fundo</li>
+        <li class="reveal">Converter arquivos <strong>PPTX</strong> existentes para o padrão da marca</li>
+        <li class="reveal">Melhorar apresentações existentes sem causar overflow ou quebra de layout</li>
+      </ul>
+    </div>
+    <footer class="slide-footer">
+      <span class="page-num">08</span>
+      <img class="logo-itau" src="../../src/assets/logos/logo-itau-branca.png" alt="Itaú Empresas">
+    </footer>
+    <aside hidden>Speaker notes: A Skill não é um template fixo — ela lê o contexto, entende a audiência e escolhe o preset visual mais adequado. Os 3 modos cobrem todos os cenários do dia a dia. Transição: "E o que ela entrega em cada caso vai muito além de HTML bonito."</aside>
+  </section>
+
+  <!-- ============================================================
+       09 — AÇÃO: O QUE ENTREGA
+       ============================================================ -->
+  <section class="slide slide-light" aria-label="O que a Skill entrega">
+    <div class="slide-content">
+      <div class="tag-label reveal">Ação</div>
+      <h2 class="reveal">Cada entrega já inclui tudo que uma apresentação precisa</h2>
+      <div class="accent-bar reveal"></div>
+      <ul class="bullet-list" style="margin-top: var(--element-gap);">
+        <li class="reveal">Fontes <strong>Itau Display Pro</strong> carregadas via @font-face local — sem CDN</li>
+        <li class="reveal">Cores e logos corretos para cada tipo de fundo, automaticamente</li>
+        <li class="reveal">Navegação completa: <strong>teclado, touch e scroll wheel</strong> prontos desde o primeiro slide</li>
+        <li class="reveal">Speaker notes em 1ª pessoa do apresentador em cada slide de conteúdo</li>
+        <li class="reveal">Barra de progresso e <strong>dots de navegação</strong> animados incluídos</li>
+      </ul>
+    </div>
+    <footer class="slide-footer" style="border-top-color: rgba(0,0,0,0.08);">
+      <span class="page-num" style="color: #555555;">09</span>
+      <img class="logo-itau" src="../../src/assets/logos/logo-itau-laranja.png" alt="Itaú Empresas">
+    </footer>
+    <aside hidden>Speaker notes: Nenhum desses elementos é opcional ou precisa ser configurado. A Skill tem um checklist de 16 itens que valida antes de entregar. O apresentador recebe o arquivo pronto para abrir e apresentar. Transição: "E o impacto disso no dia a dia é mensurável."</aside>
+  </section>
+
+  <!-- ============================================================
+       10 — SEÇÃO R (AZUL)
+       ============================================================ -->
+  <section class="slide slide-dark" aria-label="Resultado">
+    <span class="letter-bg">R</span>
+    <div class="slide-content" style="align-items: center; text-align: center;">
+      <div class="tag-label reveal">Resultado</div>
+      <h2 class="reveal" style="font-size: var(--title-size); max-width: min(18ch, 90%);">
+        Apresentações profissionais<br>em minutos,<br>não horas
+      </h2>
+      <p class="reveal" style="font-size: var(--h3-size); font-weight: 300; color: rgba(255,255,255,0.58); margin-top: var(--element-gap);">
+        Foco total no conteúdo. Zero tempo perdido com formatação.
+      </p>
+    </div>
+    <footer class="slide-footer">
+      <span class="page-num">10</span>
+      <img class="logo-itau" src="../../src/assets/logos/logo-itau-branca.png" alt="Itaú Empresas">
+    </footer>
+  </section>
+
+  <!-- ============================================================
+       11 — RESULTADO: MÉTRICAS
+       ============================================================ -->
+  <section class="slide slide-metrics" aria-label="Métricas de resultado">
+    <div class="slide-content">
+      <div class="tag-label reveal">Resultado</div>
+      <h2 class="reveal">O impacto direto no dia a dia das equipes</h2>
+      <div class="accent-bar reveal"></div>
+      <div class="stats-grid reveal-scale" style="margin-top: var(--content-gap);">
+        <div class="stat-card">
+          <div class="stat-value">−90%</div>
+          <div class="stat-label">do tempo de criação por apresentação</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">100%</div>
+          <div class="stat-label">de aderência ao guia de marca Itaú</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">3min</div>
+          <div class="stat-label">do prompt à apresentação pronta</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">0</div>
+          <div class="stat-label">dependências externas no HTML gerado</div>
+        </div>
+      </div>
+    </div>
+    <footer class="slide-footer">
+      <span class="page-num">11</span>
+      <img class="logo-itau" src="../../src/assets/logos/logo-itau-branca.png" alt="Itaú Empresas">
+    </footer>
+    <aside hidden>Speaker notes: O que levava 2 a 3 horas agora leva menos de 5 minutos do primeiro prompt ao arquivo final. Os 100% de aderência não são um objetivo aspiracional — são uma consequência estrutural: a Skill lê o guia de marca antes de gerar qualquer linha de código. Transição: "Agora vou mostrar exatamente como fazer isso."</aside>
+  </section>
+
+  <!-- ============================================================
+       12 — SEÇÃO DEMO (TECH)
+       ============================================================ -->
+  <section class="slide slide-tech" aria-label="Demo">
+    <div class="slide-content">
+      <div class="step-badge reveal">⚡ Demo ao vivo</div>
+      <h2 class="reveal" style="font-size: var(--title-size);">Um prompt é<br>tudo que você precisa</h2>
+      <div class="accent-bar reveal"></div>
+      <p class="reveal" style="font-size: var(--body-size); color: rgba(197,205,230,0.62); font-weight: 300; max-width: min(52ch, 90%);">
+        Invocar a Skill no Claude Code é tão simples quanto digitar um comando no terminal. Nenhuma configuração prévia necessária.
+      </p>
+    </div>
+    <footer class="slide-footer">
+      <span class="page-num">12</span>
+      <img class="logo-itau" src="../../src/assets/logos/logo-itau-branca.png" alt="Itaú Empresas">
+    </footer>
+  </section>
+
+  <!-- ============================================================
+       13 — DEMO: O COMANDO
+       ============================================================ -->
+  <section class="slide slide-tech" aria-label="Demo - O comando">
+    <div class="slide-content">
+      <div class="tag-label reveal">Demo</div>
+      <h2 class="reveal">Invocar a Skill é simples</h2>
+      <div class="accent-bar reveal"></div>
+      <div class="code-block reveal" style="margin-top: var(--element-gap);">
+        <div><span class="code-comment"># No terminal do Claude Code, basta digitar:</span></div>
+        <br>
+        <div>
+          <span class="code-prompt">❯ </span><span class="code-command">/frontend-slides-pt <span class="code-hi">gere uma apresentação</span></span>
+        </div>
+        <div style="padding-left: 2.2em;"><span class="code-command">sobre resultados do Q2 2026 para a diretoria,</span></div>
+        <div style="padding-left: 2.2em;"><span class="code-command">com dados de crédito PME,</span></div>
+        <div style="padding-left: 2.2em;"><span class="code-command">estilo executivo, 10 slides</span></div>
+        <br>
+        <div><span class="code-comment"># A Skill responde automaticamente:</span></div>
+        <div><span class="code-prompt">✓ </span><span class="code-hi">Lendo guia de marca... Gerando 3 previews...</span></div>
+        <div><span class="code-prompt">✓ </span><span class="code-hi">Abrindo no browser para você escolher o estilo...</span></div>
+        <div><span class="code-prompt">✓ </span><span class="code-hi">Gerando apresentação completa...</span></div>
+      </div>
+    </div>
+    <footer class="slide-footer">
+      <span class="page-num">13</span>
+      <img class="logo-itau" src="../../src/assets/logos/logo-itau-branca.png" alt="Itaú Empresas">
+    </footer>
+    <aside hidden>Speaker notes: Aqui demonstro ao vivo no terminal. O ponto central é que o usuário não precisa especificar cores, fontes ou estrutura — a Skill sabe tudo isso. Transição: "E o que acontece depois é ainda mais interessante."</aside>
+  </section>
+
+  <!-- ============================================================
+       14 — DEMO: O FLUXO
+       ============================================================ -->
+  <section class="slide slide-tech" aria-label="Demo - Fluxo completo">
+    <div class="slide-content">
+      <div class="tag-label reveal">Demo</div>
+      <h2 class="reveal">Do prompt à apresentação em 4 passos</h2>
+      <div class="accent-bar reveal"></div>
+      <div class="flow-steps reveal" style="margin-top: var(--element-gap);">
+        <div class="flow-step">
+          <div class="flow-num">1</div>
+          <div class="flow-text">Skill lê o <strong>guia de marca completo</strong> — cores, fontes, logos, tom de voz</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">2</div>
+          <div class="flow-text">Gera <strong>3 previews visuais</strong> distintos e abre no browser para sua escolha</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">3</div>
+          <div class="flow-text">Você escolhe o estilo → Skill gera a <strong>apresentação completa</strong> em HTML autocontido</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">4</div>
+          <div class="flow-text">Arquivo pronto para apresentar, exportar em <strong>PDF</strong> ou fazer deploy em segundos</div>
+        </div>
+      </div>
+    </div>
+    <footer class="slide-footer">
+      <span class="page-num">14</span>
+      <img class="logo-itau" src="../../src/assets/logos/logo-itau-branca.png" alt="Itaú Empresas">
+    </footer>
+    <aside hidden>Speaker notes: O fluxo é deliberadamente simples — uma decisão do usuário (escolha do estilo) e o resto é automático. O PDF e o deploy são opcionais mas disponíveis com scripts prontos no repositório.</aside>
+  </section>
+
+  <!-- ============================================================
+       15 — PRÓXIMOS PASSOS
+       ============================================================ -->
+  <section class="slide slide-dark" aria-label="Próximos passos">
+    <div class="slide-content">
+      <div class="tag-label reveal">Próximos Passos</div>
+      <h2 class="reveal">O que vem a seguir</h2>
+      <div class="accent-bar reveal"></div>
+      <div class="next-grid reveal" style="margin-top: var(--content-gap);">
+        <div class="next-card">
+          <div class="nc-title">Exportação PPTX</div>
+          <div class="nc-desc">Converter o HTML gerado para formato PowerPoint compatível</div>
+        </div>
+        <div class="next-card">
+          <div class="nc-title">Multi-idioma</div>
+          <div class="nc-desc">Suporte nativo a inglês e espanhol para equipes globais</div>
+        </div>
+        <div class="next-card">
+          <div class="nc-title">Dados ao vivo</div>
+          <div class="nc-desc">Integrar com dashboards e APIs para slides com dados atualizados</div>
+        </div>
+        <div class="next-card">
+          <div class="nc-title">Templates verticais</div>
+          <div class="nc-desc">Biblioteca por negócio: PME, Corporate, Agro, Varejo</div>
+        </div>
+      </div>
+    </div>
+    <footer class="slide-footer">
+      <span class="page-num">15</span>
+      <img class="logo-itau" src="../../src/assets/logos/logo-itau-branca.png" alt="Itaú Empresas">
+    </footer>
+    <aside hidden>Speaker notes: Abro para perguntas sobre priorização. A exportação PPTX é a mais pedida — muitas equipes ainda precisam compartilhar em formato Office. Pergunto à plateia qual desses seria mais valioso para o dia a dia deles.</aside>
+  </section>
+
+  <!-- ============================================================
+       16 — ENCERRAMENTO
+       ============================================================ -->
+  <section class="slide slide-closing" aria-label="Encerramento">
+    <div class="slide-content" style="align-items: center; text-align: center;">
+      <img class="logo-itau reveal-scale" src="../../src/assets/logos/logo-itau-branca.png" alt="Itaú Empresas"
+           style="height: clamp(34px, 5vh, 52px); max-height: min(50vh, 400px); margin-bottom: var(--content-gap);">
+      <h2 class="reveal" style="font-size: var(--title-size); color: #FFFFFF;">
+        Comece agora<br>com uma linha
+      </h2>
+      <p class="reveal" style="font-size: var(--body-size); color: rgba(255,255,255,0.55); font-weight: 300; margin-top: var(--element-gap);">
+        Seu próximo slide está a um prompt de distância.
+      </p>
+      <div class="reveal">
+        <code class="cta-cmd">/frontend-slides-pt [sua ideia aqui]</code>
+      </div>
+      <p class="reveal" style="font-size: var(--small-size); color: rgba(255,255,255,0.28); font-weight: 300; margin-top: var(--content-gap);">
+        guilhermesoliveira20@gmail.com
+      </p>
+    </div>
+    <footer class="slide-footer" style="border-top-color: rgba(255,255,255,0.07);">
+      <span class="page-num" style="opacity: 0.22;">16</span>
+    </footer>
+  </section>
+
+  <script>
+    /* ============================================================
+       SLIDE PRESENTATION CONTROLLER
+       ============================================================ */
+    class SlidePresentation {
+      constructor() {
+        this.slides = Array.from(document.querySelectorAll('.slide'));
+        this.currentIndex = 0;
+
+        this.progressBar = document.getElementById('progressBar');
+        this.navDotsContainer = document.getElementById('navDots');
+
+        this.setupIntersectionObserver();
+        this.setupKeyboardNav();
+        this.setupTouchNav();
+        this.setupWheelNav();
+        this.setupProgressBar();
+        this.setupNavDots();
+
+        window.presentation = this;
+      }
+
+      setupIntersectionObserver() {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              const idx = this.slides.indexOf(entry.target);
+              if (idx !== -1) {
+                this.currentIndex = idx;
+                this.updateProgressBar();
+                this.updateNavDots();
+              }
+            }
+          });
+        }, { threshold: 0.5 });
+
+        this.slides.forEach(slide => observer.observe(slide));
+      }
+
+      setupKeyboardNav() {
+        document.addEventListener('keydown', (e) => {
+          if (e.target.getAttribute('contenteditable')) return;
+          switch (e.key) {
+            case 'ArrowDown': case 'ArrowRight': case ' ': case 'PageDown':
+              e.preventDefault(); this.goToSlide(this.currentIndex + 1); break;
+            case 'ArrowUp': case 'ArrowLeft': case 'PageUp':
+              e.preventDefault(); this.goToSlide(this.currentIndex - 1); break;
+            case 'Home': e.preventDefault(); this.goToSlide(0); break;
+            case 'End':  e.preventDefault(); this.goToSlide(this.slides.length - 1); break;
+          }
+        });
+      }
+
+      setupTouchNav() {
+        let startY = 0, startX = 0;
+        document.addEventListener('touchstart', e => {
+          startY = e.touches[0].clientY;
+          startX = e.touches[0].clientX;
+        }, { passive: true });
+        document.addEventListener('touchend', e => {
+          const dY = startY - e.changedTouches[0].clientY;
+          const dX = startX - e.changedTouches[0].clientX;
+          if (Math.abs(dY) > Math.abs(dX) && Math.abs(dY) > 40) {
+            this.goToSlide(this.currentIndex + (dY > 0 ? 1 : -1));
+          }
+        }, { passive: true });
+      }
+
+      setupWheelNav() {
+        let last = 0;
+        document.addEventListener('wheel', e => {
+          e.preventDefault();
+          const now = Date.now();
+          if (now - last < 800) return;
+          last = now;
+          this.goToSlide(this.currentIndex + (e.deltaY > 0 ? 1 : -1));
+        }, { passive: false });
+      }
+
+      goToSlide(index) {
+        const target = Math.max(0, Math.min(index, this.slides.length - 1));
+        if (target === this.currentIndex) return;
+        this.slides[target].scrollIntoView({ behavior: 'smooth' });
+        this.currentIndex = target;
+      }
+
+      setupProgressBar() { this.updateProgressBar(); }
+      updateProgressBar() {
+        if (!this.progressBar) return;
+        const pct = (this.currentIndex / (this.slides.length - 1)) * 100;
+        this.progressBar.style.width = `${pct}%`;
+      }
+
+      setupNavDots() {
+        if (!this.navDotsContainer) return;
+        this.navDotsContainer.innerHTML = '';
+        this.slides.forEach((_, i) => {
+          const dot = document.createElement('button');
+          dot.className = 'nav-dot' + (i === 0 ? ' active' : '');
+          dot.setAttribute('aria-label', `Slide ${i + 1}`);
+          dot.addEventListener('click', () => this.goToSlide(i));
+          this.navDotsContainer.appendChild(dot);
+        });
+      }
+      updateNavDots() {
+        const dots = this.navDotsContainer?.querySelectorAll('.nav-dot');
+        dots?.forEach((dot, i) => dot.classList.toggle('active', i === this.currentIndex));
+      }
+    }
+
+    new SlidePresentation();
+  </script>
+</body>
+</html>

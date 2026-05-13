@@ -59,6 +59,7 @@ Determinar o que o usuário quer:
 - **Modo A: Nova Apresentação** — Criar do zero. Ir para Fase 1.
 - **Modo B: Conversão de PPT** — Converter arquivo .pptx. Ir para Fase 4.
 - **Modo C: Melhoria** — Melhorar HTML existente. Seguir regras do Modo C abaixo.
+- **Modo D: Adaptar Beautiful Template** — Usar layout de um dos 32 templates da biblioteca com cores Itaú. Ir para Fase 2D.
 
 ### Modo C: Regras de Modificação
 
@@ -119,11 +120,20 @@ Se o usuário forneceu imagens:
 
 ## Fase 2: Descoberta de Estilo
 
-**Regra inegociável: sempre mostrar exemplos visuais de todos os templates disponíveis antes de qualquer geração.** O usuário deve ver para poder decidir — nunca escolher no escuro.
+**Regra inegociável: sempre mostrar exemplos visuais antes de qualquer geração.** O usuário deve ver para poder decidir — nunca escolher no escuro.
 
-### Passo 2.1: Gerar Previews de Todos os Templates (OBRIGATÓRIO — sem exceção)
+### Passo 2.0: Escolher Família de Templates (OBRIGATÓRIO)
 
-Ao receber qualquer requisição de nova apresentação (Modo A), **antes de fazer perguntas de conteúdo ou estilo**, ler [`style-presets-itau.md`](style-presets-itau.md) e gerar um arquivo de preview HTML para cada um dos 8 presets disponíveis.
+Perguntar via `AskUserQuestion` (header: "Família de Templates"):
+- **Itaú Presets** — 8 estilos criados para a marca Itaú; cores, tipografia e estrutura já definidos
+- **Beautiful Templates** — 32 layouts externos (editoriais, criativos, técnicos) adaptados com cores Itaú
+
+Se **Itaú Presets** → Passo 2.1.
+Se **Beautiful Templates** → Ir para **Fase 2D** (seleção e adaptação do template base).
+
+### Passo 2.1: Gerar Previews dos Itaú Presets (quando família = Itaú Presets)
+
+Ao receber qualquer requisição de nova apresentação com família "Itaú Presets", **antes de fazer perguntas de conteúdo ou estilo**, ler [`style-presets-itau.md`](style-presets-itau.md) e gerar um arquivo de preview HTML para cada um dos 8 presets disponíveis.
 
 Salvar em `.claude-design/slide-previews/`:
 
@@ -157,6 +167,111 @@ Qual template você prefere?
 - **Swiss Modern** — Minimalista clean, inspiração Bauhaus com acento laranja
 
 Se o usuário pedir para **misturar elementos** de dois templates, perguntar quais elementos de cada um e seguir para Fase 3 com a especificação combinada.
+
+---
+
+## Fase 2D: Seleção e Adaptação de Beautiful Template
+
+Usado quando o usuário quer um dos 32 templates da biblioteca `beautiful-html-templates` com cores Itaú.
+
+### Passo 2D.1: Mostrar e Selecionar
+
+Perguntar via `AskUserQuestion` (header: "Categoria") em qual grupo está o template desejado:
+
+- **Escuros / Dramáticos** — Vellum, Studio, Broadside, 8-Bit Orbit, Pink Script, Signal, Grove, Mat, Bold Poster
+- **Claros / Editoriais** — Soft Editorial, Monochrome, Cartesian, Playful, Biennale Yellow, Blue Professional, Capsule
+- **Coloridos / Criativos** — Creative Mode, Block Frame, Daisy Days, Sakura Chroma, Retro Zine, Scatterbrain, Pin & Paper, Raw Grid
+- **Modernos / Tipográficos** — Neo-Grid Bold, Editorial Tri-Tone, Cobalt Grid, Long Table, People's Platform, Retro Windows, Coral
+
+Após a categoria, pedir o nome exato do template via campo livre. Abrir `public/screenshots/[slug]-1.png` para confirmar visualmente com o usuário.
+
+### Passo 2D.2: Ler o Template Base
+
+```
+public/templates/[slug]/template.html   ← estrutura e CSS
+public/templates/[slug]/template.json   ← metadados (palette, typography, mood)
+```
+
+Identificar no `template.html`:
+1. **Tokens CSS** no `:root` — todos os `--c-*` (cores) e `--f-*` (fontes)
+2. **Cores hardcoded** fora de variáveis (hex, rgb, rgba no CSS)
+3. **Fontes externas** carregadas via Google Fonts
+4. **Estrutura de slides** — número, layouts usados, elementos decorativos
+
+### Passo 2D.3: Remapear para Paleta Itaú
+
+Substituir a camada de tokens mantendo toda a arquitetura CSS intacta.
+
+**Remapeamento de cores (`--c-*` → Itaú):**
+
+| Token original | Itaú substituto | Regra |
+|----------------|-----------------|-------|
+| `--c-bg` (fundo escuro) | `#1F3B6B` | Azul Itaú como base escura |
+| `--c-bg-alt` (fundo escuro alt) | `#162d52` | Variante mais escura do azul |
+| `--c-bg` (fundo claro) | `#FFFFFF` ou `#FAFAF8` | Fundo limpo |
+| `--c-bg-light`, `--c-bg-light-alt` | Mesmas regras de claro | — |
+| `--c-fg` (texto principal em escuro) | `#FFFFFF` | — |
+| `--c-fg` (texto principal em claro) | `#1A1A1A` | — |
+| `--c-fg-2` (texto secundário) | `rgba(255,255,255,0.65)` em escuro / `#555555` em claro | — |
+| `--c-fg-3` (texto terciário) | `rgba(255,255,255,0.35)` em escuro / `#999999` em claro | — |
+| `--c-accent` | `#EC7000` | Laranja Itaú — sempre |
+| `--c-emphasis` | `#EC7000` | — |
+| `--c-border` | `rgba(255,255,255,0.12)` em escuro / `rgba(0,0,0,0.08)` em claro | — |
+| Qualquer outra cor de marca original | Cor Itaú mais próxima em função | — |
+
+**Remapeamento de fontes (`--f-*` → Itau Display Pro):**
+
+```css
+/* Adicionar antes de qualquer uso de fonte */
+@font-face { font-family:'Itau Display Pro';
+  src:url('src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Lt.woff2') format('woff2');
+  font-weight:300; font-display:swap; }
+@font-face { font-family:'Itau Display Pro';
+  src:url('src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Rg.woff2') format('woff2');
+  font-weight:400; font-display:swap; }
+@font-face { font-family:'Itau Display Pro';
+  src:url('src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Bd.woff2') format('woff2');
+  font-weight:700; font-display:swap; }
+@font-face { font-family:'Itau Display Pro';
+  src:url('src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Blk.woff2') format('woff2');
+  font-weight:900; font-display:swap; }
+
+/* No :root, substituir tokens de fonte */
+--f-display:  'Itau Display Pro', 'Helvetica Neue', Arial, sans-serif;
+--f-heading:  'Itau Display Pro', 'Helvetica Neue', Arial, sans-serif;
+--f-body:     'Itau Display Pro', 'Helvetica Neue', Arial, sans-serif;
+--f-mono:     'JetBrains Mono', 'Fira Code', monospace; /* manter para código */
+--f-annotation: 'Itau Display Pro', 'Helvetica Neue', Arial, sans-serif;
+```
+
+Remover o `<link>` de Google Fonts original do template — exceto se for `JetBrains Mono` para código.
+
+**O que NÃO tocar:**
+- Valores de `--sz-*` (escala de tamanhos tipográficos)
+- Valores de `--sp-*` ou `--gap-*` (espaçamentos)
+- Qualquer propriedade que não seja cor ou fonte
+- A estrutura HTML e os layouts CSS
+- O JavaScript de navegação do template (apenas adicionar `window.presentation` se ausente)
+- Efeitos decorativos (formas, padrões, texturas) — só recoloridos
+
+### Passo 2D.4: Adicionar Logo e Conteúdo
+
+1. Adicionar logo Itaú em cada slide (branca em fundo escuro, laranja em fundo claro), posicionada no rodapé
+2. Preencher o conteúdo real solicitado substituindo os placeholders do template
+3. Garantir viewport fitting: cada `.slide` com `height: 100dvh; overflow: hidden`
+4. Adicionar `window.presentation = this` se o JS do template não expõe
+
+### Checklist Extra para Modo D
+
+- [ ] Todos os `--c-*` tokens remapeados para paleta Itaú
+- [ ] Cores hardcoded (hex/rgb fora de variáveis) também substituídas
+- [ ] `@font-face` Itau Display Pro declarado com os 4 pesos
+- [ ] `--f-display`, `--f-heading`, `--f-body` remapeados para Itau Display Pro
+- [ ] Google Fonts originais do template removidos (exceto JetBrains Mono)
+- [ ] Logo Itaú adicionado em cada slide com variante correta por fundo
+- [ ] Conteúdo real preenchido nos placeholders do template
+- [ ] Todo `.slide` com `height: 100dvh; overflow: hidden`
+- [ ] `window.presentation = this` exposto para export-pdf.sh
 
 ---
 

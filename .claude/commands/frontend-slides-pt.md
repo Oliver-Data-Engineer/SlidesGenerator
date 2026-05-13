@@ -45,9 +45,16 @@ Leia estes arquivos antes de gerar qualquer slide:
 
 **Passo 2:** Se informações essenciais faltarem, fazer UMA pergunta consolidada com `AskUserQuestion` cobrindo: propósito, tamanho, audiência, conteúdo disponível, edição inline (sim/não)
 
-**Passo 3 (OBRIGATÓRIO — sempre, sem exceção):** Ler `style-presets-itau.md` e gerar um preview HTML para **cada um dos 8 templates disponíveis**. Salvar em `.claude-design/slide-previews/` e abrir todos no browser. Cada preview é autocontido (~80 linhas), mostra um slide de título animado com as cores, tipografia e vibe do template, e exibe o nome do preset visível no slide.
+**Passo 3A (OBRIGATÓRIO):** Perguntar via `AskUserQuestion` qual família de templates usar (header: "Família"):
 
-| Arquivo | Template | Vibe |
+- **Itaú Presets** — 8 estilos criados especificamente para a marca Itaú Empresas
+- **Beautiful Templates** — 32 templates externos com layout, tipografia e estrutura próprios, adaptados com as cores da marca Itaú
+
+**Passo 3B — Se "Itaú Presets":**
+
+Ler `style-presets-itau.md` e gerar um preview HTML para cada um dos 8 presets em `.claude-design/slide-previews/`. Abrir todos no browser. Após, perguntar (header: "Preset"):
+
+| Preview | Template | Vibe |
 |---------|----------|------|
 | `01-itau-escuro.html` | Itaú Escuro | Executivo, premium — fundo azul `#1F3B6B` |
 | `02-itau-claro.html` | Itaú Claro | Limpo, corporativo — fundo branco |
@@ -58,7 +65,55 @@ Leia estes arquivos antes de gerar qualquer slide:
 | `07-bold-signal.html` | Bold Signal | Criativo, card laranja em fundo escuro |
 | `08-swiss-modern.html` | Swiss Modern | Clean minimalista, Bauhaus-inspired |
 
-Após abrir os previews, perguntar via `AskUserQuestion` (header: "Template") qual o usuário prefere. Opções: Itaú Escuro / Itaú Claro / Itaú Split / Itaú Laranja / Itaú Tech / Itaú Editorial / Bold Signal / Swiss Modern / Misturar elementos.
+**Passo 3B — Se "Beautiful Templates":**
+
+1. Abrir o arquivo `README.md` do projeto no browser (ou listar abaixo os 32 disponíveis) para o usuário visualizar os templates
+2. Perguntar via `AskUserQuestion` (header: "Categoria") em qual grupo está o template desejado:
+   - **Escuros / Dramáticos** — Vellum, Studio, Broadside, 8-Bit Orbit, Pink Script, Signal, Grove, Mat, Bold Poster
+   - **Claros / Editoriais** — Soft Editorial, Monochrome, Cartesian, Playful, Biennale Yellow, Blue Professional, Capsule
+   - **Coloridos / Criativos** — Creative Mode, Block Frame, Daisy Days, Sakura Chroma, Retro Zine, Scatterbrain, Pin & Paper, Raw Grid
+   - **Modernos / Tipográficos** — Neo-Grid Bold, Editorial Tri-Tone, Cobalt Grid, Long Table, People's Platform, Retro Windows, Coral
+3. Perguntar o nome exato do template escolhido (campo livre via "Other")
+4. Ler `public/templates/[slug]/template.html` e `public/templates/[slug]/template.json`
+5. Seguir **Modo D** (seção abaixo) para adaptar com cores Itaú e gerar a apresentação completa
+
+### Modo D — Adaptar Beautiful Template com Cores Itaú
+
+Ao adaptar um template da biblioteca `beautiful-html-templates`:
+
+**O que PRESERVAR (identidade visual do template):**
+- Toda a arquitetura CSS de layout: grid, flex, posicionamento, margens, padding
+- Hierarquia e escala tipográfica (tamanhos relativos entre heading/body/caption)
+- Estrutura de slides: número de colunas, posição dos elementos, divisores decorativos
+- Animações, transições e JavaScript de navegação do template original
+- Efeitos decorativos (texturas, padrões de fundo, formas geométricas) — apenas recoloridos
+
+**O que SUBSTITUIR (aplicar marca Itaú):**
+- **Todas as cores** via remapeamento dos CSS tokens do template:
+
+| Token do template | Cor Itaú substituta |
+|-------------------|---------------------|
+| `--c-bg` (fundo escuro principal) | `#1F3B6B` (azul Itaú) |
+| `--c-bg-alt` (fundo escuro alternativo) | `#162d52` |
+| `--c-bg` (fundo claro principal) | `#FFFFFF` ou `#FAFAF8` |
+| `--c-fg` (texto principal) | `#FFFFFF` (em fundo escuro) ou `#1A1A1A` (em fundo claro) |
+| `--c-fg-2`, `--c-fg-3` | `rgba(255,255,255,0.65)` / `rgba(255,255,255,0.35)` em escuro |
+| `--c-accent` | `#EC7000` (laranja Itaú — sempre) |
+| `--c-emphasis` | `#EC7000` ou `rgba(236,112,0,0.85)` |
+| `--c-border` | `rgba(255,255,255,0.12)` em escuro / `rgba(0,0,0,0.08)` em claro |
+| Qualquer outra cor de marca original | Cor Itaú mais próxima em contraste/função |
+
+- **Fontes de display e body** → Itau Display Pro via `@font-face` local (4 pesos: 300/400/700/900). Remapear `--f-display`, `--f-heading`, `--f-body`. Manter `--f-mono` como `JetBrains Mono` para código.
+- **Logo Itaú** → adicionar no rodapé de cada slide (branca em fundo escuro, laranja em fundo claro)
+- **Conteúdo** → substituir placeholders pelo conteúdo real solicitado
+
+**Checklist extra para Modo D:**
+- [ ] Todos os `--c-*` tokens remapeados para paleta Itaú
+- [ ] Todas as cores hardcoded (hex/rgb fora de variáveis) também substituídas
+- [ ] `@font-face` Itau Display Pro declarado e `--f-display`/`--f-body` remapeados
+- [ ] Logo Itaú adicionado em cada slide
+- [ ] Conteúdo real substituindo os placeholders do template
+- [ ] Viewport fitting respeitado (100dvh, clamp, sem overflow)
 
 **Passo 4:** Usuário escolhe template → gerar apresentação completa
 

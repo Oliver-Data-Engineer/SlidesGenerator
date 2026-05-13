@@ -3,20 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Broadside — Itaú Empresas</title>
+    <title>Broadside — Itau Empresas</title>
 
-    
     
     <!-- Broadside fonts: Barlow (the workhorse grotesque), IBM Plex Mono (chrome),
          Noto Sans SC (CJK fallback for all roles) -->
     
 
     <style>
-    /* ── Itaú Display Pro ─────────────────────────────────────────────── */
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Lt.woff2') format('woff2'); font-weight: 300; font-display: swap; }
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Rg.woff2') format('woff2'); font-weight: 400; font-display: swap; }
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Bd.woff2') format('woff2'); font-weight: 700; font-display: swap; }
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Blk.woff2') format('woff2'); font-weight: 900; font-display: swap; }
+    /* -- Itau Display Pro -------------------------------- */
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Lt.woff2') format('woff2');font-weight:300;font-display:swap;}
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Rg.woff2') format('woff2');font-weight:400;font-display:swap;}
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Bd.woff2') format('woff2');font-weight:700;font-display:swap;}
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Blk.woff2') format('woff2');font-weight:900;font-display:swap;}
 
       /* ╔══════════════════════════════════════════════════════════════════════╗
    ║  ZONE A · TOKENS                                                     ║
@@ -32,40 +31,35 @@
 
         /* Broadside has NO light slides. These vars are overridden to dark
            so any accidental .light class still renders dark. */
-        --c-bg-light: #FFFFFF;
-        --c-bg-light-alt: #F5F5F5;
+        --c-bg-light: #162d52;
+        --c-bg-light-alt: #162d52;
 
         /* The signature: orange is not an accent here — it is the ENVIRONMENT.
            Cover and chapter slides use this as their full background fill. */
-        --c-bg-orange: #e85d26;
+        --c-bg-orange: #EC7000;
 
         --c-fg: #FFFFFF; /* primary text on dark slides                 */
-        --c-fg-2: rgba(255,255,255,0.65); /* secondary / muted text on dark              */
-        --c-fg-3: rgba(255,255,255,0.35); /* tertiary / hint text on dark                */
+        --c-fg-2: #555555; /* secondary / muted text on dark              */
+        --c-fg-3: #555555; /* tertiary / hint text on dark                */
 
         /* Text colours for orange slides — ink on fire */
-        --c-fg-light: #1A1A1A; /* primary text on orange                */
+        --c-fg-light: #555555; /* primary text on orange                */
         --c-fg-light-2: #555555; /* muted text on orange                  */
-        --c-fg-light-3: rgba(
-          17,
-          17,
-          17,
-          0.55
-        ); /* hint text on orange               */
+        --c-fg-light-3: #555555; /* hint text on orange               */
 
         --c-accent: #EC7000; /* orange = accent everywhere on dark slides   */
         --c-border: rgba(255,255,255,0.12); /* divider lines on dark slides                */
-        --c-border-light: rgba(0,0,0,0.08); /* same dark border even on "light" (overridden)*/
+        --c-border-light: rgba(255,255,255,0.12); /* same dark border even on "light" (overridden)*/
 
         /* ── Typography ──────────────────────────────────────────────────── */
         /* Barlow: the defining typeface. Condensed grotesque. Always heavy.
            Used at max weight — 900 for display, 800 for h1, 700 for h2.
            Noto Sans SC provides full CJK coverage at matching weights. */
-        --f-display: 'Itau Display Pro', 'Helvetica Neue', Arial, sans-serif;
-        --f-heading: 'Itau Display Pro', 'Helvetica Neue', Arial, sans-serif;
-        --f-body: 'Itau Display Pro', 'Helvetica Neue', Arial, sans-serif;
+        --f-display: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
+        --f-heading: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
+        --f-body: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
         /* Mono: IBM Plex Mono for chrome labels, metadata, slide numbers */
-        --f-mono: "IBM Plex Mono", monospace;
+        --f-mono: 'JetBrains Mono','Fira Code',monospace;
 
         /* ── Type Scale ───────────────────────────────────────────────────── */
         /* Broadside's defining trait: TYPE IS MASSIVE. Display is 13vw —
@@ -552,7 +546,7 @@
         justify-content: center;
         background: rgba(255, 255, 255, 0.04);
         border: 1px dashed var(--c-border);
-        font-family: var(--font-mono, "IBM Plex Mono", monospace);
+        font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
         font-size: 0.85rem;
         font-weight: 500;
         color: var(--c-fg-2, var(--c-fg));

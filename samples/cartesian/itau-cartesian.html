@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cartesian — Itaú Empresas</title>
+    <title>Cartesian — Itau Empresas</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
     <style>
-    /* ── Itaú Display Pro ─────────────────────────────────────────────── */
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Lt.woff2') format('woff2'); font-weight: 300; font-display: swap; }
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Rg.woff2') format('woff2'); font-weight: 400; font-display: swap; }
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Bd.woff2') format('woff2'); font-weight: 700; font-display: swap; }
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Blk.woff2') format('woff2'); font-weight: 900; font-display: swap; }
+    /* -- Itau Display Pro -------------------------------- */
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Lt.woff2') format('woff2');font-weight:300;font-display:swap;}
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Rg.woff2') format('woff2');font-weight:400;font-display:swap;}
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Bd.woff2') format('woff2');font-weight:700;font-display:swap;}
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Blk.woff2') format('woff2');font-weight:900;font-display:swap;}
 
         * {
             margin: 0;
@@ -20,12 +20,12 @@
         }
 
         :root {
-            --bg-primary: #ede8e0;
-            --bg-secondary: #e2dbd1;
-            --text-primary: #1a1a1a;
-            --text-secondary: #5a5a5a;
-            --accent: #8a8178;
-            --line: #b8b0a4;
+            --bg-primary: #EC7000;
+            --bg-secondary: #FFFFFF;
+            --text-primary: #EC7000;
+            --text-secondary: #1A1A1A;
+            --accent: #EC7000;
+            --line: rgba(0,0,0,0.08);
         }
 
         body {
@@ -154,7 +154,7 @@
 
         /* Typography */
         h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
             font-weight: 400;
             line-height: 1.1;
         }
@@ -277,7 +277,7 @@
         }
 
         .slide-agenda .agenda-number {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
             font-size: 1.5rem;
             color: var(--accent);
             min-width: 3vw;
@@ -302,7 +302,7 @@
         }
 
         .slide-statement .quote-mark {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
             font-size: 5rem;
             line-height: 1;
             color: var(--line);
@@ -411,7 +411,7 @@
         }
 
         .slide-twocol .stat-item h4 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
             font-size: 2rem;
             margin-bottom: 0.5vh;
         }
@@ -550,7 +550,7 @@
         }
 
         .slide-timeline .timeline-item h4 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
             font-size: 1.2rem;
             margin-bottom: 1vh;
             margin-top: 2vh;
@@ -608,7 +608,7 @@
         }
 
         .slide-team .team-member h4 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
             font-size: 1.2rem;
             margin-bottom: 0.5vh;
         }
@@ -1015,7 +1015,7 @@
                     label: 'Target',
                     data: [2.5, 3.0, 3.5, 4.2],
                     backgroundColor: 'transparent',
-                    borderColor: '#b8b0a4',
+                    borderColor: 'rgba(255,255,255,0.65)',
                     borderWidth: 2,
                     borderDash: [5, 5]
                 }]
@@ -1038,12 +1038,12 @@
                     y: {
                         beginAtZero: true,
                         grid: {
-                            color: '#e2dbd1',
+                            color: '#FFFFFF',
                             drawBorder: false
                         },
                         ticks: {
                             font: { family: 'Inter', size: 11 },
-                            color: '#8a8178',
+                            color: 'rgba(255,255,255,0.65)',
                             padding: 10
                         }
                     },
@@ -1077,19 +1077,19 @@
                     fill: true,
                     tension: 0.4,
                     pointBackgroundColor: '#1a1a1a',
-                    pointBorderColor: '#ede8e0',
+                    pointBorderColor: '#FFFFFF',
                     pointBorderWidth: 2,
                     pointRadius: 5
                 }, {
                     label: 'Industry Average',
                     data: [10, 14, 19, 24, 30, 36],
-                    borderColor: '#b8b0a4',
+                    borderColor: 'rgba(255,255,255,0.65)',
                     backgroundColor: 'transparent',
                     borderWidth: 2,
                     borderDash: [5, 5],
                     fill: false,
                     tension: 0.4,
-                    pointBackgroundColor: '#b8b0a4',
+                    pointBackgroundColor: 'rgba(255,255,255,0.65)',
                     pointRadius: 4
                 }]
             },
@@ -1111,12 +1111,12 @@
                     y: {
                         beginAtZero: true,
                         grid: {
-                            color: '#e2dbd1',
+                            color: '#FFFFFF',
                             drawBorder: false
                         },
                         ticks: {
                             font: { family: 'Inter', size: 11 },
-                            color: '#8a8178',
+                            color: 'rgba(255,255,255,0.65)',
                             padding: 10,
                             callback: function(value) {
                                 return value + '%';

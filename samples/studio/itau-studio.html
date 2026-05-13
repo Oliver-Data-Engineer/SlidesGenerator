@@ -3,9 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Studio — Itaú Empresas</title>
+    <title>Studio — Itau Empresas</title>
 
-    
     
     <!--
       Studio style uses three font families:
@@ -17,11 +16,11 @@
     
 
     <style>
-    /* ── Itaú Display Pro ─────────────────────────────────────────────── */
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Lt.woff2') format('woff2'); font-weight: 300; font-display: swap; }
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Rg.woff2') format('woff2'); font-weight: 400; font-display: swap; }
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Bd.woff2') format('woff2'); font-weight: 700; font-display: swap; }
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Blk.woff2') format('woff2'); font-weight: 900; font-display: swap; }
+    /* -- Itau Display Pro -------------------------------- */
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Lt.woff2') format('woff2');font-weight:300;font-display:swap;}
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Rg.woff2') format('woff2');font-weight:400;font-display:swap;}
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Bd.woff2') format('woff2');font-weight:700;font-display:swap;}
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Blk.woff2') format('woff2');font-weight:900;font-display:swap;}
 
       /* ╔══════════════════════════════════════════════════════════════════════╗
    ║  ZONE A · TOKENS  —  STUDIO STYLE                                    ║
@@ -37,22 +36,22 @@
         /* Slightly lighter near-black for secondary dark surfaces */
         --c-bg-alt: #162d52;
         /* Acid yellow: THE light slide background — yellow is the environment, not an accent */
-        --c-bg-light: #FFFFFF;
+        --c-bg-light: #F5F5F5;
         /* Slightly cooler yellow for secondary light surfaces */
         --c-bg-light-alt: #F5F5F5;
 
         /* Primary text on dark: acid yellow — the only colour on dark slides */
         --c-fg: #FFFFFF;
         /* Secondary text on dark: yellow at 58% opacity — muted but still warm */
-        --c-fg-2: rgba(255,255,255,0.65);
+        --c-fg-2: #555555;
         /* Tertiary / hint text on dark: yellow at 32% */
-        --c-fg-3: rgba(255,255,255,0.35);
+        --c-fg-3: #555555;
         /* Primary text on light: near-black on yellow */
-        --c-fg-light: #1A1A1A;
+        --c-fg-light: #555555;
         /* Secondary text on light: near-black at 62% */
         --c-fg-light-2: #555555;
         /* Tertiary text on light */
-        --c-fg-light-3: #999999;
+        --c-fg-light-3: #555555;
 
         /* Accent: yellow on dark / same yellow (var reused by engine) */
         --c-accent: #EC7000;
@@ -63,12 +62,12 @@
 
         /* ── Typography ──────────────────────────────────────────────────── */
         /* Display + Heading: Barlow 900 — grotesque at max weight becomes a graphic object */
-        --f-display: 'Itau Display Pro', 'Helvetica Neue', Arial, sans-serif;
-        --f-heading: 'Itau Display Pro', 'Helvetica Neue', Arial, sans-serif;
+        --f-display: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
+        --f-heading: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
         /* Body: Barlow 400/500 — same family, steps back as weight drops */
-        --f-body: 'Itau Display Pro', 'Helvetica Neue', Arial, sans-serif;
+        --f-body: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
         /* Mono: IBM Plex Mono — metadata, counters, footer columns */
-        --f-mono: "IBM Plex Mono", monospace;
+        --f-mono: 'JetBrains Mono','Fira Code',monospace;
 
         /* ── Type Scale ───────────────────────────────────────────────────── */
         /* Studio runs type LARGER than Signal — the headline IS the layout */

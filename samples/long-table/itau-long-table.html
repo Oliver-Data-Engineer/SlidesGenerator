@@ -2,30 +2,28 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>Long Table — Itaú Empresas</title>
+<title>Long Table — Itau Empresas</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-
-
 <style>
-    /* ── Itaú Display Pro ─────────────────────────────────────────────── */
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Lt.woff2') format('woff2'); font-weight: 300; font-display: swap; }
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Rg.woff2') format('woff2'); font-weight: 400; font-display: swap; }
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Bd.woff2') format('woff2'); font-weight: 700; font-display: swap; }
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Blk.woff2') format('woff2'); font-weight: 900; font-display: swap; }
+    /* -- Itau Display Pro -------------------------------- */
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Lt.woff2') format('woff2');font-weight:300;font-display:swap;}
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Rg.woff2') format('woff2');font-weight:400;font-display:swap;}
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Bd.woff2') format('woff2');font-weight:700;font-display:swap;}
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Blk.woff2') format('woff2');font-weight:900;font-display:swap;}
 
   :root {
-    --paper:    #FAF1E2;   /* warm buttery cream paper */
-    --paper-d:  #F2E5CF;   /* slightly darker cream */
-    --paper-vd: #E8D7B6;   /* deeper cream for accents */
-    --ink:      #B53D2A;   /* warm rust / terracotta red — the only ink colour */
-    --ink-dp:   #8E2D1F;   /* deeper red for emphasis */
-    --rule:     #B53D2A;
+    --paper:    #FFFFFF;   /* warm buttery cream paper */
+    --paper-d:  #FFFFFF;   /* slightly darker cream */
+    --paper-vd: #FFFFFF;   /* deeper cream for accents */
+    --ink:      #1A1A1A;   /* warm rust / terracotta red — the only ink colour */
+    --ink-dp:   #1A1A1A;   /* deeper red for emphasis */
+    --rule:     rgba(255,255,255,0.12);
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; height: 100%; background: #0a0a0a; }
   body {
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     color: var(--ink);
     overflow: hidden;
   }
@@ -60,7 +58,7 @@
 
   /* ─── TYPE SYSTEM ──────────────────────────────────────────── */
   .disp {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-weight: 800;
     line-height: 0.92;
     letter-spacing: -0.01em;
@@ -68,14 +66,14 @@
     color: var(--ink);
   }
   .body-it {
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-weight: 400;
     line-height: 1.45;
     color: var(--ink);
   }
   .body-ro {
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: normal;
     font-weight: 400;
     line-height: 1.5;
@@ -87,7 +85,7 @@
     position: absolute;
     right: clamp(36px, 3.6vw, 80px);
     bottom: clamp(40px, 4vh, 64px);
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: clamp(14px, 0.95vw, 16px);
     color: var(--ink);
@@ -98,7 +96,7 @@
     position: fixed;
     left: clamp(36px, 3.6vw, 80px);
     bottom: clamp(40px, 4vh, 64px);
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: clamp(11px, 0.78vw, 13px);
     color: var(--ink);
@@ -115,7 +113,7 @@
     padding: clamp(8px, 1vh, 14px) clamp(20px, 2vw, 32px);
     border: 1.5px solid var(--ink);
     border-radius: 999px;
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: clamp(15px, 1.1vw, 20px);
     color: var(--ink);
@@ -124,7 +122,7 @@
   }
   .pill-divider {
     color: var(--ink);
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: clamp(18px, 1.4vw, 24px);
     line-height: 1;
@@ -140,7 +138,7 @@
     height: clamp(34px, 2.6vw, 44px);
     border: 1.5px solid var(--ink);
     border-radius: 50%;
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: clamp(15px, 1.05vw, 18px);
     color: var(--ink);
@@ -153,7 +151,7 @@
     align-items: center;
     padding: clamp(7px, 0.9vh, 12px) clamp(14px, 1.4vw, 22px);
     border: 1.5px solid var(--ink);
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: clamp(15px, 1.1vw, 20px);
     color: var(--ink);
@@ -181,14 +179,14 @@
     display: flex; align-items: center; gap: clamp(12px, 1.2vw, 18px);
   }
   .s-cover .ed-row .ed-label {
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: clamp(20px, 1.6vw, 30px);
     color: var(--ink);
     line-height: 1;
   }
   .s-cover .title {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-weight: 800;
     text-transform: uppercase;
     font-size: clamp(82px, min(8.8vw, 15vh), 180px);
@@ -201,7 +199,7 @@
     flex-wrap: wrap;
   }
   .s-cover .stats {
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: clamp(17px, 1.2vw, 22px);
     line-height: 1.4;
@@ -218,7 +216,7 @@
     align-items: flex-start;
   }
   .s-cover .tagline {
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: clamp(18px, 1.4vw, 26px);
     line-height: 1.35;
@@ -235,7 +233,7 @@
     text-align: right;
   }
   .s-cover .big-edition {
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-weight: 400;
     font-size: clamp(180px, min(22vw, 38vh), 480px);
@@ -245,7 +243,7 @@
   }
   .s-cover .big-edition-lab {
     margin-top: clamp(8px, 1vh, 16px);
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-weight: 700;
     text-transform: uppercase;
     font-size: clamp(15px, 1.1vw, 18px);
@@ -254,7 +252,7 @@
   }
   .s-cover .big-edition-meta {
     margin-top: clamp(20px, 2.4vh, 36px);
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: clamp(17px, 1.2vw, 22px);
     line-height: 1.4;
@@ -281,13 +279,13 @@
     margin-bottom: clamp(20px, 2.4vh, 36px);
   }
   .s-manifesto .left .ed-row .ed-label {
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: clamp(18px, 1.4vw, 24px);
     color: var(--ink);
   }
   .s-manifesto .left .h {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-weight: 800;
     text-transform: uppercase;
     font-size: clamp(72px, min(7.6vw, 13vh), 160px);
@@ -296,7 +294,7 @@
     color: var(--ink);
   }
   .s-manifesto .right p {
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: clamp(20px, 1.5vw, 28px);
     line-height: 1.45;
@@ -309,7 +307,7 @@
   }
   .s-manifesto .right .sig {
     margin-top: clamp(18px, 2vh, 30px);
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: clamp(16px, 1.2vw, 20px);
     color: var(--ink);
@@ -339,7 +337,7 @@
     gap: 30px;
   }
   .s-index .topbar .h {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-weight: 800;
     text-transform: uppercase;
     font-size: clamp(56px, min(6vw, 10vh), 120px);
@@ -348,7 +346,7 @@
     color: var(--ink);
   }
   .s-index .topbar .lab-tag {
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: clamp(15px, 1.05vw, 18px);
     color: var(--ink);
@@ -374,20 +372,20 @@
     padding-bottom: clamp(10px, 1.2vh, 16px);
   }
   .s-index .card .card-top .num-tag {
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: clamp(15px, 1.05vw, 18px);
     color: var(--ink);
   }
   .s-index .card .card-top .city-tag {
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: clamp(15px, 1.05vw, 18px);
     color: var(--ink);
     margin-left: auto;
   }
   .s-index .card .nm {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-weight: 800;
     text-transform: uppercase;
     font-size: clamp(28px, 2.4vw, 44px);
@@ -396,7 +394,7 @@
     letter-spacing: -0.008em;
   }
   .s-index .card .desc {
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: clamp(15px, 1vw, 17px);
     line-height: 1.45;
@@ -411,7 +409,7 @@
   }
   .s-index .card .meta-row .seats-tag,
   .s-index .card .meta-row .date-tag {
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: clamp(14px, 0.95vw, 16px);
     color: var(--ink);
@@ -438,13 +436,13 @@
     display: flex; align-items: center; gap: 14px;
   }
   .s-featured .left .ed-row .ed-label {
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: clamp(18px, 1.3vw, 22px);
     color: var(--ink);
   }
   .s-featured .left .ttl {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-weight: 800;
     text-transform: uppercase;
     font-size: clamp(60px, min(6.4vw, 10.5vh), 140px);
@@ -453,7 +451,7 @@
     color: var(--ink);
   }
   .s-featured .left .lede {
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: clamp(17px, 1.2vw, 22px);
     line-height: 1.5;
@@ -483,7 +481,7 @@
   }
   .s-featured .right .info-row:last-child { border-bottom: none; padding-bottom: 0; }
   .s-featured .right .info-row .k {
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: clamp(14px, 0.95vw, 16px);
     color: var(--ink);
@@ -492,7 +490,7 @@
     letter-spacing: 0.16em;
   }
   .s-featured .right .info-row .v {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-weight: 700;
     text-transform: uppercase;
     font-size: clamp(20px, 1.6vw, 28px);
@@ -502,7 +500,7 @@
     text-align: right;
   }
   .s-featured .right .info-row .v.it {
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-weight: 400;
     text-transform: none;
@@ -531,13 +529,13 @@
     gap: clamp(8px, 1vh, 14px);
   }
   .s-menu .top-row .kicker {
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: clamp(16px, 1.2vw, 20px);
     color: var(--ink);
   }
   .s-menu .top-row .h {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-weight: 800;
     text-transform: uppercase;
     font-size: clamp(48px, min(5vw, 8.4vh), 100px);
@@ -558,7 +556,7 @@
     border-bottom: 1px solid rgba(181, 61, 42, 0.32);
   }
   .s-menu .course .num-tag {
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: clamp(16px, 1.1vw, 20px);
     color: var(--ink);
@@ -568,7 +566,7 @@
     display: flex; flex-direction: column; gap: 4px;
   }
   .s-menu .course .item .nm {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-weight: 700;
     text-transform: uppercase;
     font-size: clamp(20px, 1.5vw, 28px);
@@ -577,7 +575,7 @@
     color: var(--ink);
   }
   .s-menu .course .item .desc {
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: clamp(15px, 1vw, 17px);
     line-height: 1.4;
@@ -585,7 +583,7 @@
     max-width: 60ch;
   }
   .s-menu .course .pair-tag {
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: clamp(14px, 0.95vw, 16px);
     color: var(--ink);
@@ -615,13 +613,13 @@
     width: 100%;
   }
   .s-quote .right .kicker {
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: clamp(16px, 1.2vw, 20px);
     color: var(--ink);
   }
   .s-quote .right .qbody {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-weight: 700;
     text-transform: uppercase;
     font-size: clamp(40px, min(4.4vw, 7.4vh), 96px);
@@ -630,7 +628,7 @@
     color: var(--ink);
   }
   .s-quote .right .qbody .it-emph {
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-weight: 500;
     text-transform: none;
@@ -644,7 +642,7 @@
     align-items: center;
   }
   .s-quote .right .who-row .who-tag {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-weight: 700;
     text-transform: uppercase;
     font-size: clamp(15px, 1.05vw, 18px);
@@ -652,7 +650,7 @@
     letter-spacing: -0.005em;
   }
   .s-quote .right .who-row .meta-tag {
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: clamp(14px, 0.95vw, 16px);
     color: var(--ink);
@@ -677,7 +675,7 @@
     gap: 30px;
   }
   .s-cal .topbar .h {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-weight: 800;
     text-transform: uppercase;
     font-size: clamp(56px, min(6vw, 10vh), 120px);
@@ -686,7 +684,7 @@
     color: var(--ink);
   }
   .s-cal .topbar .lab-tag {
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: clamp(15px, 1.05vw, 18px);
     color: var(--ink);
@@ -714,20 +712,20 @@
     padding: 6px 0;
   }
   .s-cal .row.headrow > div {
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: clamp(13px, 0.92vw, 15px);
     color: var(--ink);
     letter-spacing: 0.04em;
   }
   .s-cal .row .num-tag {
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: clamp(15px, 1.05vw, 18px);
     color: var(--ink);
   }
   .s-cal .row .city-tag {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-weight: 700;
     text-transform: uppercase;
     font-size: clamp(18px, 1.3vw, 24px);
@@ -735,14 +733,14 @@
     letter-spacing: -0.005em;
   }
   .s-cal .row .theme {
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: clamp(17px, 1.2vw, 22px);
     color: var(--ink);
     line-height: 1.3;
   }
   .s-cal .row .date-tag {
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: clamp(15px, 1.05vw, 17px);
     color: var(--ink);
@@ -751,7 +749,7 @@
     border: 1.5px solid var(--ink);
     border-radius: 999px;
     padding: 6px 16px;
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: clamp(13px, 0.95vw, 16px);
     color: var(--ink);
@@ -786,13 +784,13 @@
     display: flex; align-items: center; gap: 14px;
   }
   .s-closing .left .ed-row .ed-label {
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: clamp(18px, 1.3vw, 22px);
     color: var(--ink);
   }
   .s-closing .left .h {
-    font-family: 'Bricolage Grotesque', sans-serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-weight: 800;
     text-transform: uppercase;
     font-size: clamp(60px, min(6.4vw, 10vh), 130px);
@@ -802,7 +800,7 @@
   }
   /* No right-side illustration — closing is a single text band. */
   .s-closing .left .desc-it {
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: clamp(17px, 1.2vw, 22px);
     line-height: 1.5;
@@ -830,7 +828,7 @@
   .s-closing .footer-line .colf {
     border-top: 1px solid var(--ink);
     padding-top: clamp(8px, 1vh, 14px);
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: clamp(14px, 0.95vw, 16px);
     color: var(--ink);

@@ -3,18 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vellum — Itaú Empresas</title>
+    <title>Vellum — Itau Empresas</title>
 
     
-    
-    
-
     <style>
-    /* ── Itaú Display Pro ─────────────────────────────────────────────── */
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Lt.woff2') format('woff2'); font-weight: 300; font-display: swap; }
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Rg.woff2') format('woff2'); font-weight: 400; font-display: swap; }
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Bd.woff2') format('woff2'); font-weight: 700; font-display: swap; }
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Blk.woff2') format('woff2'); font-weight: 900; font-display: swap; }
+    /* -- Itau Display Pro -------------------------------- */
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Lt.woff2') format('woff2');font-weight:300;font-display:swap;}
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Rg.woff2') format('woff2');font-weight:400;font-display:swap;}
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Bd.woff2') format('woff2');font-weight:700;font-display:swap;}
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Blk.woff2') format('woff2');font-weight:900;font-display:swap;}
 
       /* ╔══════════════════════════════════════════════════════════════════════╗
    ║  ZONE A · TOKENS                                                     ║
@@ -28,32 +25,32 @@
            reference to --c-bg-light or --c-fg-light renders identically. */
         --c-bg: #1F3B6B;       /* deep periwinkle — every slide        */
         --c-bg-alt: #162d52;
-        --c-bg-light: #FFFFFF; /* alias — no inverted theme            */
-        --c-bg-light-alt: #F5F5F5;
+        --c-bg-light: #162d52; /* alias — no inverted theme            */
+        --c-bg-light-alt: #162d52;
 
         --c-fg: #FFFFFF;       /* warm yellow type — every slide       */
-        --c-fg-2: rgba(255,255,255,0.65);
-        --c-fg-3: rgba(255,255,255,0.35);
-        --c-fg-light: #1A1A1A; /* alias                                */
+        --c-fg-2: #555555;
+        --c-fg-3: #555555;
+        --c-fg-light: rgba(255,255,255,0.65); /* alias                                */
         --c-fg-light-2: #555555;
-        --c-fg-light-3: #999999;
+        --c-fg-light-3: #555555;
 
         --c-accent: #EC7000;       /* dusty teal — only used on the large quote-mark glyph */
         --c-emphasis: #EC7000;     /* brighter yellow — used for <em> emphasis and small accent text */
-        --c-border: rgba(255,255,255,0.12);
+        --c-border: rgba(0,0,0,0.08);
         --c-border-light: rgba(0,0,0,0.08);
 
         /* ── Typography ──────────────────────────────────────────────────── */
         /* Display: Cormorant Garamond italic — delicate serif against the
            bold chromatic field. Unexpected, personal, gallery-adjacent.    */
-        --f-display: 'Itau Display Pro', 'Helvetica Neue', Arial, sans-serif;
-        --f-heading: 'Itau Display Pro', 'Helvetica Neue', Arial, sans-serif;
+        --f-display: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
+        --f-heading: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
         /* Body: DM Sans — clean, recedes behind the personality type       */
-        --f-body: 'Itau Display Pro', 'Helvetica Neue', Arial, sans-serif;
+        --f-body: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
         /* Mono: Courier Prime — typed-note feeling for labels              */
-        --f-mono: "Courier Prime", "Courier New", monospace;
+        --f-mono: 'JetBrains Mono','Fira Code',monospace;
         /* Annotation: Courier Prime mono — typed-note feel for attributions */
-        --f-annotation: 'Itau Display Pro', 'Helvetica Neue', Arial, sans-serif;
+        --f-annotation: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
 
         /* ── Type Scale ──────────────────────────────────────────────────── */
         --sz-display: 11vw;
@@ -610,11 +607,11 @@
       /* Two visually distinct navy shades.
          Left = darker (the past, the unedited). Right = lighter (the present). */
       .compare-panel.left {
-        background: #1f2858;   /* darker navy */
+        background: #1F3B6B;   /* darker navy */
         color: var(--c-fg);
       }
       .compare-panel.right {
-        background: #34407a;   /* lighter navy */
+        background: #1F3B6B;   /* lighter navy */
         color: var(--c-fg);
         border-left: 1px solid rgba(232, 216, 92, 0.18);
       }

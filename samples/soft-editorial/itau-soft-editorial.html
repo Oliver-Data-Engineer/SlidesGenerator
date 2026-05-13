@@ -2,29 +2,27 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>Soft Editorial — Itaú Empresas</title>
+<title>Soft Editorial — Itau Empresas</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-
 
 <script src="deck-stage.js"></script>
 <style>
-    /* ── Itaú Display Pro ─────────────────────────────────────────────── */
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Lt.woff2') format('woff2'); font-weight: 300; font-display: swap; }
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Rg.woff2') format('woff2'); font-weight: 400; font-display: swap; }
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Bd.woff2') format('woff2'); font-weight: 700; font-display: swap; }
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Blk.woff2') format('woff2'); font-weight: 900; font-display: swap; }
+    /* -- Itau Display Pro -------------------------------- */
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Lt.woff2') format('woff2');font-weight:300;font-display:swap;}
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Rg.woff2') format('woff2');font-weight:400;font-display:swap;}
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Bd.woff2') format('woff2');font-weight:700;font-display:swap;}
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Blk.woff2') format('woff2');font-weight:900;font-display:swap;}
 
   :root {
-    --paper:    #F2EEDF;     /* warm cream page */
-    --paper-2:  #ECE6D2;
-    --ink:      #2A241B;     /* warm near-black */
-    --ink-soft: #5C5345;
-    --pink:     #E1A4C2;     /* dusty pink */
-    --lemon:    #D6DD63;     /* chartreuse */
-    --blush:    #E8C9B6;     /* soft peach */
-    --sage:     #B7C7A8;     /* sage (extra) */
-    --lilac:    #C9BEDC;     /* lilac (extra) */
+    --paper:    #FFFFFF;     /* warm cream page */
+    --paper-2:  #F5F5F5;
+    --ink:      #1A1A1A;     /* warm near-black */
+    --ink-soft: #555555;
+    --pink:     #EC7000;     /* dusty pink */
+    --lemon:    #EC7000;     /* chartreuse */
+    --blush:    #EC7000;     /* soft peach */
+    --sage:     #FFFFFF;     /* sage (extra) */
+    --lilac:    rgba(255,255,255,0.65);     /* lilac (extra) */
   }
   html, body { margin:0; padding:0; background:#1a1a1a; }
   body { font-family: "Work Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; color: var(--ink); }
@@ -52,7 +50,7 @@
     left: 80px; right: 80px; bottom: 50px;
     display: flex;
     justify-content: space-between;
-    font-family: "Cormorant Garamond", "Garamond", serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-size: 26px;
     font-style: italic;
     color: var(--ink-soft);
@@ -60,7 +58,7 @@
   .pagedot {
     position: absolute;
     right: 80px; top: 60px;
-    font-family: "Cormorant Garamond", serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: 26px;
     color: var(--ink-soft);
@@ -68,17 +66,17 @@
 
   /* Typography */
   h1, h2, h3, p { margin: 0; }
-  .serif      { font-family: "Cormorant Garamond", "Garamond", serif; font-weight: 500; }
-  .serif-it   { font-family: "Cormorant Garamond", serif; font-style: italic; font-weight: 500; }
+  .serif      { font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif; font-weight: 500; }
+  .serif-it   { font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif; font-style: italic; font-weight: 500; }
   .display {
-    font-family: "Cormorant Garamond", serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-weight: 500;
     font-size: 188px;
     line-height: 0.95;
     letter-spacing: -0.015em;
   }
   .title {
-    font-family: "Cormorant Garamond", serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-weight: 500;
     font-size: 124px;
     line-height: 0.98;
@@ -105,13 +103,13 @@
     display: flex; flex-direction: column; gap: 36px;
   }
   .s-cover .kicker {
-    font-family: "Cormorant Garamond", serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: 38px;
     color: var(--ink-soft);
   }
   .s-cover h1 {
-    font-family: "Cormorant Garamond", serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-weight: 500;
     font-size: 232px;
     line-height: 0.92;
@@ -141,7 +139,7 @@
     left: 80px; top: 200px; width: 760px;
   }
   .s-foreword .col-l .opener {
-    font-family: "Cormorant Garamond", serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: 56px;
     line-height: 1.1;
@@ -169,7 +167,7 @@
   .s-foreword .col-r p:first-child { color: var(--ink); }
   .s-foreword .signoff {
     margin-top: 24px;
-    font-family: "Cormorant Garamond", serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: 30px;
     color: var(--ink);
@@ -191,14 +189,14 @@
     justify-content: space-between;
   }
   .s-method .step .n {
-    font-family: "Cormorant Garamond", serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: 92px;
     line-height: 0.9;
     color: var(--ink);
   }
   .s-method .step h3 {
-    font-family: "Cormorant Garamond", serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-weight: 500;
     font-size: 44px;
     line-height: 1.05;
@@ -235,7 +233,7 @@
   .s-insights .card.lemon { background: var(--lemon); }
   .s-insights .card.blush { background: var(--blush); }
   .s-insights .card .head h3 {
-    font-family: "Cormorant Garamond", serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-weight: 500;
     font-size: 72px;
     line-height: 1;
@@ -269,14 +267,14 @@
     text-align: center;
   }
   .s-closer .marker {
-    font-family: "Cormorant Garamond", serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: 38px;
     color: var(--ink);
     margin-bottom: 32px;
   }
   .s-closer h2 {
-    font-family: "Cormorant Garamond", serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-weight: 500;
     font-size: 168px;
     line-height: 0.95;
@@ -307,7 +305,7 @@
     justify-content: space-between;
   }
   .s-numbers .stat .v {
-    font-family: "Cormorant Garamond", serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-weight: 500;
     font-size: 200px;
     line-height: 0.9;
@@ -333,7 +331,7 @@
     text-align: center;
   }
   .s-quote .qmark {
-    font-family: "Cormorant Garamond", serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: 220px;
     line-height: 0.7;
@@ -341,7 +339,7 @@
     margin-bottom: 12px;
   }
   .s-quote blockquote {
-    font-family: "Cormorant Garamond", serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-weight: 500;
     font-size: 88px;
     line-height: 1.05;
@@ -359,7 +357,7 @@
     color: var(--ink);
   }
   .s-quote .attr .role {
-    font-family: "Cormorant Garamond", serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-weight: 400;
     font-size: 24px;
@@ -387,7 +385,7 @@
     justify-content: center;
   }
   .s-next .panel.l h2 {
-    font-family: "Cormorant Garamond", serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-weight: 500;
     font-size: 124px;
     line-height: 0.95;
@@ -418,13 +416,13 @@
   .s-next .item.lemon { background: var(--lemon); }
   .s-next .item.blush { background: var(--blush); }
   .s-next .item .n {
-    font-family: "Cormorant Garamond", serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: 64px;
     line-height: 1;
   }
   .s-next .item h3 {
-    font-family: "Cormorant Garamond", serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-weight: 500;
     font-size: 38px;
     line-height: 1.05;
@@ -450,7 +448,7 @@
     display: flex; align-items: center; gap: 24px;
   }
   .s-consult .action .tag {
-    font-family: "Cormorant Garamond", serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: 28px;
     color: var(--ink);
@@ -459,7 +457,7 @@
     padding-right: 24px;
   }
   .s-consult .action h2 {
-    font-family: "Cormorant Garamond", serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-weight: 500;
     font-size: 40px;
     line-height: 1.15;
@@ -480,7 +478,7 @@
     gap: 16px;
   }
   .s-consult .col h3 {
-    font-family: "Cormorant Garamond", serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-weight: 500;
     font-style: italic;
     font-size: 32px;
@@ -510,7 +508,7 @@
   .s-consult .col ul li strong { color: var(--ink); font-weight: 500; }
   .s-consult .source {
     margin-top: auto;
-    font-family: "Cormorant Garamond", serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: 24px;
     color: var(--ink-soft);
@@ -525,7 +523,7 @@
     display: flex; flex-direction: column; gap: 24px;
   }
   .s-chart .left h2 {
-    font-family: "Cormorant Garamond", serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-weight: 500;
     font-size: 96px;
     line-height: 0.98;
@@ -556,7 +554,7 @@
     overflow: hidden;
   }
   .s-chart .right .yhead {
-    font-family: "Cormorant Garamond", serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: 24px;
     color: var(--ink-soft);
@@ -576,14 +574,14 @@
     position: absolute; left: -56px; top: 0; bottom: 0;
     display: flex; flex-direction: column; justify-content: space-between;
     font-size: 24px; color: var(--ink-soft);
-    font-family: "Cormorant Garamond", serif; font-style: italic;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif; font-style: italic;
   }
   .s-chart .right svg { width: 100%; height: 100%; display: block; position: absolute; inset: 12px 12px 0 12px; overflow: visible; }
   .s-chart .right .xticks {
     display: flex; justify-content: space-between;
     margin-top: 12px;
     font-size: 24px; color: var(--ink-soft);
-    font-family: "Cormorant Garamond", serif; font-style: italic;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif; font-style: italic;
   }
 
   /* ============== PROCESS DIAGRAM ========================= */
@@ -593,7 +591,7 @@
     display: flex; align-items: baseline; justify-content: space-between;
   }
   .s-process .head h2 {
-    font-family: "Cormorant Garamond", serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-weight: 500;
     font-size: 88px;
     line-height: 1;
@@ -601,7 +599,7 @@
   }
   .s-process .head h2 em { font-style: italic; font-weight: 400; }
   .s-process .head .sub {
-    font-family: "Cormorant Garamond", serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: 28px;
     color: var(--ink-soft);
@@ -623,13 +621,13 @@
     position: relative;
   }
   .s-process .node .n {
-    font-family: "Cormorant Garamond", serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: 56px;
     line-height: 0.9;
   }
   .s-process .node h3 {
-    font-family: "Cormorant Garamond", serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-weight: 500;
     font-size: 32px;
     line-height: 1.05;
@@ -660,7 +658,7 @@
     border-radius: 18px;
     padding: 14px 28px;
     display: flex; justify-content: space-between; align-items: center;
-    font-family: "Cormorant Garamond", serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: 24px;
     color: var(--ink);
@@ -674,7 +672,7 @@
     gap: 40px;
   }
   .s-matrix .head h2 {
-    font-family: "Cormorant Garamond", serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-weight: 500;
     font-size: 76px;
     line-height: 1;
@@ -683,7 +681,7 @@
   }
   .s-matrix .head h2 em { font-style: italic; font-weight: 400; }
   .s-matrix .head .sub {
-    font-family: "Cormorant Garamond", serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: 26px;
     color: var(--ink-soft);
@@ -713,7 +711,7 @@
   }
   .s-matrix .table .cell:nth-child(4n) { border-right: 0; }
   .s-matrix .table .cell.head-row {
-    font-family: "Cormorant Garamond", serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-size: 28px;
     color: var(--ink);
@@ -721,7 +719,7 @@
     align-items: center;
   }
   .s-matrix .table .cell.row-label {
-    font-family: "Cormorant Garamond", serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-weight: 500;
     font-size: 28px;
     color: var(--ink);
@@ -740,7 +738,7 @@
   .s-matrix .pill.yes  { background: var(--lemon); }
   .s-matrix .pill.part { background: var(--blush); }
   .s-matrix .pill.no   { background: var(--pink); }
-  .s-matrix .pill.note { background: rgba(255,255,255,0.6); border: 1px solid rgba(42,36,27,.18); color: var(--ink-soft); font-style: italic; font-family: "Cormorant Garamond", serif; font-weight: 400; }
+  .s-matrix .pill.note { background: rgba(255,255,255,0.6); border: 1px solid rgba(42,36,27,.18); color: var(--ink-soft); font-style: italic; font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif; font-weight: 400; }
 
   /* ============== 9. DESIGN SYSTEM ========================== */
   .s-system .wrap {
@@ -753,7 +751,7 @@
   }
   .s-system .wrap > * { background: rgba(255,255,255,.55); border-radius: 24px; padding: 22px 26px; }
   .s-system h4 {
-    font-family: "Cormorant Garamond", serif;
+    font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
     font-style: italic;
     font-weight: 500;
     font-size: 26px;
@@ -1076,11 +1074,11 @@
         <div class="gline" style="top:50%"></div>
         <div class="gline" style="top:75%"></div>
         <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-          <polyline fill="none" stroke="#E1A4C2" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"
+          <polyline fill="none" stroke="#EC7000" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"
             points="0,4 16,28 32,46 48,60 64,72 80,80 100,86" />
-          <polyline fill="none" stroke="#D6DD63" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"
+          <polyline fill="none" stroke="#EC7000" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"
             points="0,4 16,16 32,26 48,36 64,44 80,50 100,54" />
-          <polyline fill="none" stroke="#2A241B" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"
+          <polyline fill="none" stroke="#1F3B6B" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"
             points="0,4 16,10 32,16 48,22 64,28 80,32 100,36" />
         </svg>
       </div>

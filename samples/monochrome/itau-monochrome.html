@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Monochrome — Itaú Empresas</title>
+    <title>Monochrome — Itau Empresas</title>
 
     
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,11 +21,11 @@
     />
 
     <style>
-    /* ── Itaú Display Pro ─────────────────────────────────────────────── */
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Lt.woff2') format('woff2'); font-weight: 300; font-display: swap; }
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Rg.woff2') format('woff2'); font-weight: 400; font-display: swap; }
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Bd.woff2') format('woff2'); font-weight: 700; font-display: swap; }
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Blk.woff2') format('woff2'); font-weight: 900; font-display: swap; }
+    /* -- Itau Display Pro -------------------------------- */
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Lt.woff2') format('woff2');font-weight:300;font-display:swap;}
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Rg.woff2') format('woff2');font-weight:400;font-display:swap;}
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Bd.woff2') format('woff2');font-weight:700;font-display:swap;}
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Blk.woff2') format('woff2');font-weight:900;font-display:swap;}
 
       /* ╔══════════════════════════════════════════════════════════════════════╗
    ║  ZONE A · TOKENS  (Ivory Ledger style)                                      ║
@@ -37,34 +37,34 @@
    ╚══════════════════════════════════════════════════════════════════════╝ */
       :root {
         /* ── Palette ──────────────────────────────────────────────────────── */
-        --c-bg: #1F3B6B; /* cream background for every slide       */
-        --c-bg-alt: #162d52; /* cream inset surface                   */
-        --c-bg-light: #FFFFFF; /* title-slide cream                     */
+        --c-bg: #FFFFFF; /* cream background for every slide       */
+        --c-bg-alt: #F5F5F5; /* cream inset surface                   */
+        --c-bg-light: #F5F5F5; /* title-slide cream                     */
         --c-bg-light-alt: #F5F5F5; /* slightly deeper cream for insets      */
-        --c-bg-cream: #f5f0e4; /* warm cream variant                    */
+        --c-bg-cream: #FFFFFF; /* warm cream variant                    */
 
-        --c-fg: #FFFFFF; /* black ink text                         */
-        --c-fg-2: rgba(255,255,255,0.65); /* secondary graphite text                */
-        --c-fg-3: rgba(255,255,255,0.35); /* tertiary graphite text                 */
-        --c-fg-light: #1A1A1A; /* black ink on cream                    */
+        --c-fg: #1A1A1A; /* black ink text                         */
+        --c-fg-2: #555555; /* secondary graphite text                */
+        --c-fg-3: #555555; /* tertiary graphite text                 */
+        --c-fg-light: #555555; /* black ink on cream                    */
         --c-fg-light-2: #555555; /* secondary graphite on cream           */
-        --c-fg-light-3: #999999; /* tertiary graphite on cream            */
+        --c-fg-light-3: #555555; /* tertiary graphite on cream            */
 
         --c-accent: #EC7000; /* accent collapsed to black ink         */
         --c-border: rgba(255,255,255,0.12); /* black dividers                        */
-        --c-border-light: rgba(0,0,0,0.08); /* black dividers on cream               */
+        --c-border-light: rgba(255,255,255,0.12); /* black dividers on cream               */
 
         /* ── Insight cards: no accent colors, just cream paper surfaces ─── */
-        --c-card-a: #fafadf;
-        --c-card-b: #f5f0e4;
-        --c-card-c: #fafadf;
+        --c-card-a: #FFFFFF;
+        --c-card-b: #FFFFFF;
+        --c-card-c: #FFFFFF;
 
         /* ── Typography ──────────────────────────────────────────────────── */
-        --f-display: 'Itau Display Pro', 'Helvetica Neue', Arial, sans-serif;
-        --f-heading: 'Itau Display Pro', 'Helvetica Neue', Arial, sans-serif;
-        --f-body: 'Itau Display Pro', 'Helvetica Neue', Arial, sans-serif;
-        --f-serif: 'Itau Display Pro', 'Helvetica Neue', Arial, sans-serif;
-        --f-mono: "JetBrains Mono", monospace;
+        --f-display: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
+        --f-heading: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
+        --f-body: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
+        --f-serif: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
+        --f-mono: 'JetBrains Mono','Fira Code',monospace;
 
         /* ── Type Scale ───────────────────────────────────────────────────── */
         --sz-display: 8.5vw; /* hero/cover — very large, very light         */

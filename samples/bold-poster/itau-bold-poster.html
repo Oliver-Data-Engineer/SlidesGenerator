@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bold Poster — Itaú Empresas</title>
+  <title>Bold Poster — Itau Empresas</title>
   
   <style>
-    /* ── Itaú Display Pro ─────────────────────────────────────────────── */
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Lt.woff2') format('woff2'); font-weight: 300; font-display: swap; }
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Rg.woff2') format('woff2'); font-weight: 400; font-display: swap; }
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Bd.woff2') format('woff2'); font-weight: 700; font-display: swap; }
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Blk.woff2') format('woff2'); font-weight: 900; font-display: swap; }
+    /* -- Itau Display Pro -------------------------------- */
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Lt.woff2') format('woff2');font-weight:300;font-display:swap;}
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Rg.woff2') format('woff2');font-weight:400;font-display:swap;}
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Bd.woff2') format('woff2');font-weight:700;font-display:swap;}
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Blk.woff2') format('woff2');font-weight:900;font-display:swap;}
 
     :root {
       --bg: #FFFFFF;
-      --dark: #1C1410;
-      --red: #D8000F;
-      --light: #F5F2EF;
+      --dark: #1F3B6B;
+      --red: #EC7000;
+      --light: #FFFFFF;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -67,7 +67,7 @@
     }
 
     /* ---------- UTILITIES ---------- */
-    .font-display { font-family: 'Shrikhand', cursive; }
+    .font-display { font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif; }
     .font-serif { font-family: 'Libre Baskerville', serif; }
     .font-sans { font-family: 'Space Grotesk', sans-serif; }
 
@@ -101,7 +101,7 @@
       position: relative; width: 100%;
     }
     .hero-title {
-      font-family: 'Shrikhand', cursive;
+      font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
       font-size: clamp(72px, 16vw, 220px);
       line-height: 0.88; color: var(--dark); letter-spacing: 1px;
     }
@@ -138,7 +138,7 @@
       text-align: center; justify-content: center;
     }
     .red-quote {
-      font-family: 'Shrikhand', cursive;
+      font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
       font-size: clamp(32px, 7vw, 90px);
       line-height: 1.15;
       text-shadow: 2px 2px 0 rgba(28,20,16,0.25), 4px 4px 0 rgba(28,20,16,0.2), 6px 6px 0 rgba(28,20,16,0.15);
@@ -159,7 +159,7 @@
       width: 100%; max-width: 1100px;
     }
     .summary-header {
-      font-family: 'Shrikhand', cursive;
+      font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
       font-size: clamp(32px, 5vw, 64px);
       color: var(--dark); line-height: 1; margin-bottom: 4vh;
     }
@@ -186,7 +186,7 @@
       display: flex; flex-direction: column;
     }
     .summary-hl .hl-num {
-      font-family: 'Shrikhand', cursive;
+      font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
       font-size: clamp(28px, 3.5vw, 48px);
       color: var(--red); line-height: 1; margin-bottom: 6px;
     }
@@ -208,7 +208,7 @@
       align-items: stretch;
     }
     .fin-header {
-      font-family: 'Shrikhand', cursive;
+      font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
       font-size: clamp(36px, 6vw, 72px);
       color: var(--dark); margin-bottom: 3vh; line-height: 1;
     }
@@ -222,7 +222,7 @@
       display: flex; flex-direction: column; justify-content: flex-start;
     }
     .fin-cell .fc-num {
-      font-family: 'Shrikhand', cursive;
+      font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
       font-size: clamp(28px, 3.5vw, 52px);
       color: var(--red); line-height: 1; margin-bottom: 8px;
     }
@@ -250,7 +250,7 @@
       align-items: center; text-align: center;
     }
     .stat-big {
-      font-family: 'Shrikhand', cursive;
+      font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
       font-size: clamp(120px, 26vw, 320px);
       line-height: 0.82; color: var(--red);
       transform: rotate(-6deg); display: inline-block;
@@ -263,7 +263,7 @@
       text-align: center;
     }
     .stat-item .si-num {
-      font-family: 'Shrikhand', cursive;
+      font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
       font-size: clamp(28px, 4vw, 56px);
       color: var(--dark); line-height: 1;
     }
@@ -286,7 +286,7 @@
       align-items: center;
     }
     .svc-header {
-      font-family: 'Shrikhand', cursive;
+      font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
       font-size: clamp(32px, 5vw, 64px);
       color: var(--dark); line-height: 1; margin-bottom: 3vh;
     }
@@ -299,7 +299,7 @@
       padding-left: 18px;
     }
     .svc-card .svc-title {
-      font-family: 'Shrikhand', cursive;
+      font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
       font-size: clamp(22px, 3vw, 36px);
       line-height: 1.1; color: var(--dark); margin-bottom: 8px;
     }
@@ -345,7 +345,7 @@
       color: var(--red); margin-bottom: 6px;
     }
     .rm-phase .rm-title {
-      font-family: 'Shrikhand', cursive;
+      font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
       font-size: clamp(18px, 2.5vw, 32px);
       line-height: 1.1; color: var(--bg); margin-bottom: 8px;
     }
@@ -383,12 +383,12 @@
     .pillar:last-child { border-right: none; }
     .pillar:nth-child(odd) { background: var(--light); }
     .pillar .p-num {
-      font-family: 'Shrikhand', cursive;
+      font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
       font-size: clamp(36px, 5vw, 64px);
       color: var(--red); line-height: 1; margin-bottom: 10px;
     }
     .pillar .p-title {
-      font-family: 'Shrikhand', cursive;
+      font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
       font-size: clamp(18px, 2.2vw, 28px);
       color: var(--dark); line-height: 1.15; margin-bottom: 12px;
     }
@@ -421,7 +421,7 @@
     }
     .global-header {
       grid-column: 1 / -1;
-      font-family: 'Shrikhand', cursive;
+      font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
       font-size: clamp(32px, 5vw, 64px);
       color: var(--dark); line-height: 1; margin-bottom: 1vh;
     }
@@ -436,7 +436,7 @@
       color: var(--red); margin-bottom: 10px;
     }
     .global-card .gc-title {
-      font-family: 'Shrikhand', cursive;
+      font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
       font-size: clamp(20px, 2.5vw, 32px);
       color: var(--dark); line-height: 1.1; margin-bottom: 10px;
     }
@@ -454,7 +454,7 @@
       line-height: 1.4;
     }
     .global-card .gc-stat strong {
-      font-family: 'Shrikhand', cursive;
+      font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
       font-size: clamp(18px, 2vw, 28px);
       color: var(--red); display: block; line-height: 1;
       margin-bottom: 2px;
@@ -466,7 +466,7 @@
       align-items: center; text-align: center; position: relative;
     }
     .close-big {
-      font-family: 'Shrikhand', cursive;
+      font-family: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
       font-size: clamp(80px, 18vw, 260px);
       line-height: 0.88; color: var(--red);
       transform: rotate(-5deg); display: inline-block;

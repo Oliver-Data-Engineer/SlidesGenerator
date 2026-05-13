@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grove — Itaú Empresas</title>
+    <title>Grove — Itau Empresas</title>
 
     
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,11 +20,11 @@
     />
 
     <style>
-    /* ── Itaú Display Pro ─────────────────────────────────────────────── */
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Lt.woff2') format('woff2'); font-weight: 300; font-display: swap; }
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Rg.woff2') format('woff2'); font-weight: 400; font-display: swap; }
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Bd.woff2') format('woff2'); font-weight: 700; font-display: swap; }
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Blk.woff2') format('woff2'); font-weight: 900; font-display: swap; }
+    /* -- Itau Display Pro -------------------------------- */
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Lt.woff2') format('woff2');font-weight:300;font-display:swap;}
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Rg.woff2') format('woff2');font-weight:400;font-display:swap;}
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Bd.woff2') format('woff2');font-weight:700;font-display:swap;}
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Blk.woff2') format('woff2');font-weight:900;font-display:swap;}
 
       /* ╔══════════════════════════════════════════════════════════════════════╗
    ║  ZONE A · TOKENS  —  GROVE STYLE                                     ║
@@ -40,27 +40,27 @@
         /* Slightly lighter forest green for secondary dark surfaces */
         --c-bg-alt: #162d52;
         /* Warm parchment: light slide background — feels like good paper */
-        --c-bg-light: #FFFFFF;
+        --c-bg-light: #F5F5F5;
         /* Slightly cooler parchment for secondary light surfaces */
         --c-bg-light-alt: #F5F5F5;
 
         /* Primary text on dark: warm cream, never pure white */
         --c-fg: #FFFFFF;
         /* Secondary text on dark: muted cream at 60% opacity */
-        --c-fg-2: rgba(255,255,255,0.65);
+        --c-fg-2: #555555;
         /* Tertiary / hint text on dark: 32% opacity — near-invisible */
-        --c-fg-3: rgba(255,255,255,0.35);
+        --c-fg-3: #555555;
         /* Primary text on light: forest green near-black */
-        --c-fg-light: #1A1A1A;
+        --c-fg-light: #555555;
         /* Secondary text on light */
         --c-fg-light-2: #555555;
         /* Tertiary text on light */
-        --c-fg-light-3: #999999;
+        --c-fg-light-3: #555555;
 
         /* Accent: terracotta coral — the single warm note; used sparingly */
         --c-accent: #EC7000;
         /* Dividers on dark: faint cream border at 12% opacity */
-        --c-border: rgba(255,255,255,0.12);
+        --c-border: rgba(0,0,0,0.08);
         /* Dividers on light: faint green border at 14% opacity */
         --c-border-light: rgba(0,0,0,0.08);
 
@@ -68,12 +68,12 @@
         /* Display + Heading: Playfair Display — editorial serif.
            Italic in accent coral is the Grove signature move.
            NEVER use weight 700 or bold on a serif in Grove. */
-        --f-display: 'Itau Display Pro', 'Helvetica Neue', Arial, sans-serif;
-        --f-heading: 'Itau Display Pro', 'Helvetica Neue', Arial, sans-serif;
+        --f-display: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
+        --f-heading: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
         /* Body: Jost weight 300 — light grotesque that steps back so the serif leads */
-        --f-body: 'Itau Display Pro', 'Helvetica Neue', Arial, sans-serif;
+        --f-body: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
         /* Mono: JetBrains Mono — labels, vertical sidebar text, metadata */
-        --f-mono: "JetBrains Mono", monospace;
+        --f-mono: 'JetBrains Mono','Fira Code',monospace;
 
         /* ── Type Scale ───────────────────────────────────────────────────── */
         /* vw units keep all sizes proportional regardless of window width */

@@ -3,10 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Signal — Itaú Empresas</title>
+    <title>Signal — Itau Empresas</title>
 
     
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!--
       Signal style uses four font families:
         1. Source Serif 4     — editorial serif for headlines, mixed roman + italic
@@ -17,11 +16,11 @@
     
 
     <style>
-    /* ── Itaú Display Pro ─────────────────────────────────────────────── */
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Lt.woff2') format('woff2'); font-weight: 300; font-display: swap; }
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Rg.woff2') format('woff2'); font-weight: 400; font-display: swap; }
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Bd.woff2') format('woff2'); font-weight: 700; font-display: swap; }
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Blk.woff2') format('woff2'); font-weight: 900; font-display: swap; }
+    /* -- Itau Display Pro -------------------------------- */
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Lt.woff2') format('woff2');font-weight:300;font-display:swap;}
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Rg.woff2') format('woff2');font-weight:400;font-display:swap;}
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Bd.woff2') format('woff2');font-weight:700;font-display:swap;}
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Blk.woff2') format('woff2');font-weight:900;font-display:swap;}
 
       /* ╔══════════════════════════════════════════════════════════════════════╗
    ║  ZONE A · TOKENS  —  SIGNAL STYLE                                    ║
@@ -37,7 +36,7 @@
         /* Slightly lighter navy for secondary dark surfaces */
         --c-bg-alt: #162d52;
         /* Warm cream: the light slide background, like aged paper */
-        --c-bg-light: #FFFFFF;
+        --c-bg-light: #F5F5F5;
         /* Slightly cooler cream for secondary light surfaces */
         --c-bg-light-alt: #F5F5F5;
 
@@ -46,13 +45,13 @@
         /* Secondary text on dark: muted blue-grey */
         --c-fg-2: rgba(255,255,255,0.65);
         /* Tertiary / hint text on dark */
-        --c-fg-3: rgba(255,255,255,0.35);
+        --c-fg-3: #555555;
         /* Primary text on light: very dark navy near-black */
-        --c-fg-light: #1A1A1A;
+        --c-fg-light: #555555;
         /* Secondary text on light */
         --c-fg-light-2: #555555;
         /* Tertiary text on light */
-        --c-fg-light-3: #999999;
+        --c-fg-light-3: rgba(255,255,255,0.65);
 
         /* Accent: warm antique gold — the single hot colour; used for italic serif em */
         --c-accent: #EC7000;
@@ -64,12 +63,12 @@
         /* ── Typography ──────────────────────────────────────────────────── */
         /* Display + Heading: Source Serif 4 — editorial, authoritative.
            Mix roman and italic mid-sentence for the Signal look. */
-        --f-display: 'Itau Display Pro', 'Helvetica Neue', Arial, sans-serif;
-        --f-heading: 'Itau Display Pro', 'Helvetica Neue', Arial, sans-serif;
+        --f-display: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
+        --f-heading: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
         /* Body: DM Sans — clean grotesque, steps back so the serif leads */
-        --f-body: 'Itau Display Pro', 'Helvetica Neue', Arial, sans-serif;
+        --f-body: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
         /* Mono: IBM Plex Mono — the condensed editorial timestamp */
-        --f-mono: "IBM Plex Mono", "JetBrains Mono", monospace;
+        --f-mono: 'JetBrains Mono','Fira Code',monospace;
 
         /* ── Type Scale ───────────────────────────────────────────────────── */
         /* vw units keep all sizes proportional regardless of window width */
@@ -2144,9 +2143,9 @@
               style="
                 background: conic-gradient(
                   var(--c-accent) 0% 35%,
-                  #3d5475 35% 65%,
-                  #526880 65% 87%,
-                  #2d3f55 87% 100%
+                  #555555 35% 65%,
+                  #555555 65% 87%,
+                  #1F3B6B 87% 100%
                 );
               "
             ></div>
@@ -2162,17 +2161,17 @@
                 <span class="pie-item-val">35%</span>
               </div>
               <div class="pie-item">
-                <div class="pie-swatch" style="background: #3d5475"></div>
+                <div class="pie-swatch" style="background: #555555"></div>
                 <span class="pie-item-label">Category B</span>
                 <span class="pie-item-val">30%</span>
               </div>
               <div class="pie-item">
-                <div class="pie-swatch" style="background: #526880"></div>
+                <div class="pie-swatch" style="background: #555555"></div>
                 <span class="pie-item-label">Category C</span>
                 <span class="pie-item-val">22%</span>
               </div>
               <div class="pie-item">
-                <div class="pie-swatch" style="background: #2d3f55"></div>
+                <div class="pie-swatch" style="background: #1F3B6B"></div>
                 <span class="pie-item-label">Category D</span>
                 <span class="pie-item-val">13%</span>
               </div>

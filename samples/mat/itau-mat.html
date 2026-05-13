@@ -3,10 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mat — Itaú Empresas</title>
+    <title>Mat — Itau Empresas</title>
 
     <!-- Preconnect to Google Fonts for faster loading -->
-    
     
     <!-- Bricolage Grotesque: heavy rounded grotesque — the display workhorse of this template.
          DM Sans: clean and neutral for body copy.
@@ -15,11 +14,11 @@
     
 
     <style>
-    /* ── Itaú Display Pro ─────────────────────────────────────────────── */
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Lt.woff2') format('woff2'); font-weight: 300; font-display: swap; }
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Rg.woff2') format('woff2'); font-weight: 400; font-display: swap; }
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Bd.woff2') format('woff2'); font-weight: 700; font-display: swap; }
-    @font-face { font-family: 'Itau Display Pro'; src: url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Blk.woff2') format('woff2'); font-weight: 900; font-display: swap; }
+    /* -- Itau Display Pro -------------------------------- */
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Lt.woff2') format('woff2');font-weight:300;font-display:swap;}
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Rg.woff2') format('woff2');font-weight:400;font-display:swap;}
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Bd.woff2') format('woff2');font-weight:700;font-display:swap;}
+    @font-face{font-family:'Itau Display Pro';src:url('../../src/assets/fonts/itau-display-pro/ItauDisplayPro_W_Blk.woff2') format('woff2');font-weight:900;font-display:swap;}
 
       /* ╔══════════════════════════════════════════════════════════════════════╗
    ║  ZONE A · TOKENS                                                     ║
@@ -34,32 +33,32 @@
         /* ── Palette — dark green surface with warm material tones ─────── */
         --c-bg: #1F3B6B; /* dark forest green — the surface       */
         --c-bg-alt: #162d52; /* slightly lighter green surface        */
-        --c-bg-light: #FFFFFF; /* warm cream — info card + light slides */
+        --c-bg-light: #F5F5F5; /* warm cream — info card + light slides */
         --c-bg-light-alt: #F5F5F5;
 
         --c-fg: #FFFFFF; /* warm cream — primary text on dark     */
-        --c-fg-2: rgba(255,255,255,0.65);
-        --c-fg-3: rgba(255,255,255,0.35);
-        --c-fg-light: #1A1A1A; /* dark green — text on cream slides     */
+        --c-fg-2: #555555;
+        --c-fg-3: #555555;
+        --c-fg-light: #555555; /* dark green — text on cream slides     */
         --c-fg-light-2: #555555;
-        --c-fg-light-3: #999999;
+        --c-fg-light-3: #555555;
 
         --c-accent: #EC7000; /* warm orange accent                    */
-        --c-border: rgba(255,255,255,0.12);
+        --c-border: rgba(0,0,0,0.08);
         --c-border-light: rgba(0,0,0,0.08);
 
         /* Wood warm tone — used for the atmospheric bottom-right glow */
-        --c-wood: #7a4e24;
+        --c-wood: #EC7000;
 
         /* ── Typography ──────────────────────────────────────────────────── */
         /* Display/Heading: Bricolage Grotesque — heavy, rounded, mixed case.
            The defining font of this template. Weight 700–800 at display scale. */
-        --f-display: 'Itau Display Pro', 'Helvetica Neue', Arial, sans-serif;
-        --f-heading: 'Itau Display Pro', 'Helvetica Neue', Arial, sans-serif;
+        --f-display: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
+        --f-heading: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
         /* Body: DM Sans — neutral, readable, lets the display type breathe */
-        --f-body: 'Itau Display Pro', 'Helvetica Neue', Arial, sans-serif;
+        --f-body: 'Itau Display Pro','Helvetica Neue',Arial,sans-serif;
         /* Mono: DM Mono — for kickers, labels, metadata, rotated edge tags */
-        --f-mono: "DM Mono", monospace;
+        --f-mono: 'JetBrains Mono','Fira Code',monospace;
 
         /* ── Type Scale ──────────────────────────────────────────────────── */
         /* vw units = responsive to viewport width */

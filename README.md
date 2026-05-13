@@ -13,7 +13,7 @@ Dois modos de uso: **Skill para o Claude Code** (`/frontend-slides-pt`) ou **app
 Clone o repositório dentro de um projeto Claude Code e use o slash command:
 
 ```bash
-git clone https://github.com/SEU_USER/SlidesGenerator
+git clone https://github.com/Oliver-Data-Engineer/SlidesGenerator
 cd SlidesGenerator
 npm install
 ```

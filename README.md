@@ -6,6 +6,22 @@ Dois modos de uso: **Skill para o Claude Code** (`/frontend-slides-pt`) ou **app
 
 ---
 
+## Usar com um agente de IA
+
+Copie o texto abaixo e cole diretamente no seu agente (Claude Code, Cursor, Copilot, etc.). O agente vai clonar o repositório, ler o guia de configuração e fazer todo o setup automaticamente.
+
+```
+Clone o repositório https://github.com/Oliver-Data-Engineer/SlidesGenerator
+e leia o arquivo SETUP.md — ele contém todas as instruções para configurar
+o projeto corretamente: verificação de pré-requisitos, instalação de
+dependências (Node.js, Python, Playwright), verificação do ambiente e
+exemplos de uso. Siga cada seção em ordem antes de qualquer outra ação.
+```
+
+> O arquivo [`SETUP.md`](./SETUP.md) é o guia operacional completo do projeto para agentes IA: pré-requisitos, instalação passo a passo, verificações, scripts disponíveis e resolução de problemas.
+
+---
+
 ## Get started
 
 ### Com Claude Code (recomendado)

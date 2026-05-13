@@ -262,8 +262,10 @@ def replace_root_vars(html: str) -> str:
 # ── Substituicao de cores hardcoded no corpo do CSS ──────────────────────────
 
 # Cores que NAO devem ser substituidas (neutras ou ja Itau)
+# Nota: #1a1a1a foi REMOVIDO desta lista — ele aparece como background em
+# stencil-tablet e soft-editorial e deve ser mapeado para #1F3B6B.
 KEEP_COLORS = {
-    '#000000','#000','#0a0a0a','#0d0d0d','#111111','#111','#1a1a1a',
+    '#000000','#000','#0a0a0a','#0d0d0d','#111111','#111',
     '#ffffff','#fff','#fafafa','#f5f5f5','#f0f0f0',
     '#ec7000','#1f3b6b','#162d52','#0f1e38','#fafaf8',
     'transparent','inherit','currentColor','currentcolor',
@@ -381,6 +383,19 @@ def update_title(html: str, slug: str) -> str:
     pretty = slug.replace('-', ' ').title()
     return re.sub(r'<title>[^<]*</title>', f'<title>{pretty} — Itau Empresas</title>', html)
 
+def copy_local_assets(slug: str, out_dir: Path) -> None:
+    """
+    Copia arquivos .js e .css locais do template para o diretorio de saida.
+    Necessario para templates que usam deck-stage.js ou estilos externos locais.
+    """
+    import shutil
+    src_dir = TEMPLATES_DIR / slug
+    for asset in src_dir.iterdir():
+        if asset.suffix in ('.js', '.css') and asset.name != 'template.html':
+            dest = out_dir / asset.name
+            if not dest.exists() or asset.stat().st_mtime > dest.stat().st_mtime:
+                shutil.copy2(asset, dest)
+
 # ── Pipeline principal ────────────────────────────────────────────────────────
 
 def adapt(slug: str) -> str:
@@ -411,6 +426,12 @@ def main():
         print(f'{RED}Nenhum template encontrado em {TEMPLATES_DIR}{NC}')
         sys.exit(1)
 
+    # Filtrar slugs se passado como argumento
+    import sys as _sys
+    filter_slugs = [a for a in _sys.argv[1:] if not a.startswith('-')]
+    if filter_slugs:
+        slugs = [s for s in slugs if s in filter_slugs]
+
     ok_count, errors = 0, []
     for slug in slugs:
         out_dir = SAMPLES_DIR / slug
@@ -419,6 +440,7 @@ def main():
         try:
             adapted = adapt(slug)
             out_path.write_text(adapted, encoding='utf-8')
+            copy_local_assets(slug, out_dir)   # copia deck-stage.js e outros assets locais
             print(f'  {GREEN}OK{NC} {slug}')
             ok_count += 1
         except Exception as e:

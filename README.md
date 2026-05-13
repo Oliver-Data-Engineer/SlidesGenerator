@@ -57,53 +57,55 @@ A Skill gera apresentações em 8 presets visuais fiéis à marca. Abra qualquer
 
 > Para regenerar os screenshots: `bash scripts/screenshot-presets.sh`
 
-### [Itaú Escuro](./public/itau-presets/01-itau-escuro.html)
-
-<p><img src="public/itau-presets/screenshots/01-itau-escuro.png" width="100%" alt="Itaú Escuro"></p>
-
-> Executivo, premium, institucional. Fundo azul `#1F3B6B`, destaque laranja.
-
-### [Itaú Claro](./public/itau-presets/02-itau-claro.html)
-
-<p><img src="public/itau-presets/screenshots/02-itau-claro.png" width="100%" alt="Itaú Claro"></p>
-
-> Transparente, acessível, corporativo limpo. Fundo branco, acentos laranja e azul.
-
-### [Itaú Split](./public/itau-presets/03-itau-split.html)
-
-<p><img src="public/itau-presets/screenshots/03-itau-split.png" width="100%" alt="Itaú Split"></p>
-
-> Moderno, dinâmico. Painel azul (30%) + branco (70%), ideal para pitch decks.
-
-### [Itaú Laranja](./public/itau-presets/04-itau-laranja.html)
-
-<p><img src="public/itau-presets/screenshots/04-itau-laranja.png" width="100%" alt="Itaú Laranja"></p>
-
-> Alta energia, impactante. Fundo `#EC7000` — para seções de destaque e CTAs.
-
-### [Itaú Tech](./public/itau-presets/05-itau-tech.html)
-
-<p><img src="public/itau-presets/screenshots/05-itau-tech.png" width="100%" alt="Itaú Tech"></p>
-
-> Técnico, preciso. Fundo `#0f1e38` com grid pattern — para dados, APIs e código.
-
-### [Itaú Editorial](./public/itau-presets/06-itau-editorial.html)
-
-<p><img src="public/itau-presets/screenshots/06-itau-editorial.png" width="100%" alt="Itaú Editorial"></p>
-
-> Relatórios premium. Hierarquia tipográfica forte, pull quotes e regras editoriais.
-
-### [Bold Signal](./public/itau-presets/07-bold-signal.html)
-
-<p><img src="public/itau-presets/screenshots/07-bold-signal.png" width="100%" alt="Bold Signal"></p>
-
-> Criativo, alto impacto. Card laranja em destaque sobre fundo escuro `#1A1A1A`.
-
-### [Swiss Modern](./public/itau-presets/08-swiss-modern.html)
-
-<p><img src="public/itau-presets/screenshots/08-swiss-modern.png" width="100%" alt="Swiss Modern"></p>
-
-> Clean, minimalista, inspiração Bauhaus. Branco + preto + laranja Itaú.
+<table>
+<tr>
+<td align="center" width="33%">
+<a href="./public/itau-presets/01-itau-escuro.html"><img src="public/itau-presets/screenshots/01-itau-escuro.png" width="100%" alt="Itaú Escuro"></a>
+<br><b>Itaú Escuro</b>
+<br><small>Executivo, premium, institucional. Fundo azul <code>#1F3B6B</code>, destaque laranja.</small>
+</td>
+<td align="center" width="33%">
+<a href="./public/itau-presets/02-itau-claro.html"><img src="public/itau-presets/screenshots/02-itau-claro.png" width="100%" alt="Itaú Claro"></a>
+<br><b>Itaú Claro</b>
+<br><small>Transparente, acessível, corporativo limpo. Fundo branco, acentos laranja e azul.</small>
+</td>
+<td align="center" width="33%">
+<a href="./public/itau-presets/03-itau-split.html"><img src="public/itau-presets/screenshots/03-itau-split.png" width="100%" alt="Itaú Split"></a>
+<br><b>Itaú Split</b>
+<br><small>Moderno, dinâmico. Painel azul (30%) + branco (70%), ideal para pitch decks.</small>
+</td>
+</tr>
+<tr>
+<td align="center" width="33%">
+<a href="./public/itau-presets/04-itau-laranja.html"><img src="public/itau-presets/screenshots/04-itau-laranja.png" width="100%" alt="Itaú Laranja"></a>
+<br><b>Itaú Laranja</b>
+<br><small>Alta energia, impactante. Fundo <code>#EC7000</code> — para seções de destaque e CTAs.</small>
+</td>
+<td align="center" width="33%">
+<a href="./public/itau-presets/05-itau-tech.html"><img src="public/itau-presets/screenshots/05-itau-tech.png" width="100%" alt="Itaú Tech"></a>
+<br><b>Itaú Tech</b>
+<br><small>Técnico, preciso. Fundo <code>#0f1e38</code> com grid pattern — para dados, APIs e código.</small>
+</td>
+<td align="center" width="33%">
+<a href="./public/itau-presets/06-itau-editorial.html"><img src="public/itau-presets/screenshots/06-itau-editorial.png" width="100%" alt="Itaú Editorial"></a>
+<br><b>Itaú Editorial</b>
+<br><small>Relatórios premium. Hierarquia tipográfica forte, pull quotes e regras editoriais.</small>
+</td>
+</tr>
+<tr>
+<td align="center" width="33%">
+<a href="./public/itau-presets/07-bold-signal.html"><img src="public/itau-presets/screenshots/07-bold-signal.png" width="100%" alt="Bold Signal"></a>
+<br><b>Bold Signal</b>
+<br><small>Criativo, alto impacto. Card laranja em destaque sobre fundo escuro <code>#1A1A1A</code>.</small>
+</td>
+<td align="center" width="33%">
+<a href="./public/itau-presets/08-swiss-modern.html"><img src="public/itau-presets/screenshots/08-swiss-modern.png" width="100%" alt="Swiss Modern"></a>
+<br><b>Swiss Modern</b>
+<br><small>Clean, minimalista, inspiração Bauhaus. Branco + preto + laranja Itaú.</small>
+</td>
+<td width="33%"></td>
+</tr>
+</table>
 
 ---
 
@@ -134,198 +136,199 @@ python scripts/screenshot-presets.py --samples # captura screenshots 1920×1080
 
 ---
 
-## Galeria de Templates — Paleta Itau Empresas
+## Galeria de Templates — Paleta Itaú Empresas
 
-32 templates da biblioteca [beautiful-html-templates](https://github.com/zarazhangrui/beautiful-html-templates), adaptados com cores e tipografia Itau Empresas.
-Abra qualquer arquivo `samples/[slug]/itau-[slug].html` no browser para ver a versao interativa.
+32 templates da biblioteca [beautiful-html-templates](https://github.com/zarazhangrui/beautiful-html-templates), adaptados com cores e tipografia Itaú Empresas.
+Abra qualquer arquivo `samples/[slug]/itau-[slug].html` no browser para ver a versão interativa.
 
 <table>
 <tr>
 <td align="center" width="33%">
 <a href="./samples/8-bit-orbit/itau-8-bit-orbit.html"><img src="samples/8-bit-orbit/screenshot.png" width="100%" alt="8-Bit Orbit"></a>
 <br><b>8-Bit Orbit</b>
-<br><small>Pixel-art neon arcade aesthetic on a deep navy void.</small>
+<br><small>Estética arcade pixel-art neon sobre fundo azul profundo.</small>
 </td>
 <td align="center" width="33%">
 <a href="./samples/biennale-yellow/itau-biennale-yellow.html"><img src="samples/biennale-yellow/screenshot.png" width="100%" alt="Biennale Yellow"></a>
 <br><b>Biennale Yellow</b>
-<br><small>Solar yellow on warm parchment with deep indigo serif and atmospheric sun-glow g...</small>
+<br><small>Amarelo solar em pergaminho quente com serifa índigo profunda e gradientes de brilho solar.</small>
 </td>
 <td align="center" width="33%">
 <a href="./samples/block-frame/itau-block-frame.html"><img src="samples/block-frame/screenshot.png" width="100%" alt="BlockFrame"></a>
 <br><b>BlockFrame</b>
-<br><small>Neobrutalist deck with pastel-neon color blocks and chunky black borders.</small>
+<br><small>Deck neo-brutalista com blocos de cores pastel-neon e bordas pretas espessas.</small>
 </td>
 </tr>
 <tr>
 <td align="center" width="33%">
 <a href="./samples/blue-professional/itau-blue-professional.html"><img src="samples/blue-professional/screenshot.png" width="100%" alt="Blue Professional"></a>
 <br><b>Blue Professional</b>
-<br><small>Cream paper background with electric cobalt blue accents; clean modern professio...</small>
+<br><small>Fundo papel creme com acentos azul-cobalto elétrico; moderno e profissional.</small>
 </td>
 <td align="center" width="33%">
 <a href="./samples/bold-poster/itau-bold-poster.html"><img src="samples/bold-poster/screenshot.png" width="100%" alt="Bold Poster"></a>
 <br><b>Bold Poster</b>
-<br><small>Editorial poster aesthetic with massive Shrikhand display and a single fire-engi...</small>
+<br><small>Estética de pôster editorial com display gigante e único acento vermelho fogo.</small>
 </td>
 <td align="center" width="33%">
 <a href="./samples/broadside/itau-broadside.html"><img src="samples/broadside/screenshot.png" width="100%" alt="Broadside"></a>
 <br><b>Broadside</b>
-<br><small>Dark editorial canvas with a single fire orange accent and bilingual Latin/Chine...</small>
+<br><small>Tela editorial escura com único acento laranja fogo e tipografia bilíngue latim/chinês.</small>
 </td>
 </tr>
 <tr>
 <td align="center" width="33%">
 <a href="./samples/capsule/itau-capsule.html"><img src="samples/capsule/screenshot.png" width="100%" alt="Capsule"></a>
 <br><b>Capsule</b>
-<br><small>Modular pill-shaped cards on warm bone with a full pastel-pop palette.</small>
+<br><small>Cards modulares em formato pílula sobre fundo bone quente com paleta pastel-pop completa.</small>
 </td>
 <td align="center" width="33%">
 <a href="./samples/cartesian/itau-cartesian.html"><img src="samples/cartesian/screenshot.png" width="100%" alt="Cartesian"></a>
 <br><b>Cartesian</b>
-<br><small>Quiet warm-neutral palette with classical Playfair serifs; tasteful and unhurrie...</small>
+<br><small>Paleta neutra-quente tranquila com serifas Playfair clássicas; discreto e sem pressa.</small>
 </td>
 <td align="center" width="33%">
 <a href="./samples/cobalt-grid/itau-cobalt-grid.html"><img src="samples/cobalt-grid/screenshot.png" width="100%" alt="Cobalt Grid"></a>
 <br><b>Cobalt Grid</b>
-<br><small>Electric cobalt italic serifs on a graph-paper canvas, anchored by stair-stepped...</small>
+<br><small>Serifas itálicas cobalto elétrico em papel milimetrado com decorações pixel-glitch em degraus.</small>
 </td>
 </tr>
 <tr>
 <td align="center" width="33%">
 <a href="./samples/coral/itau-coral.html"><img src="samples/coral/screenshot.png" width="100%" alt="Coral"></a>
 <br><b>Coral</b>
-<br><small>Cream and coral on near-black, set in oversized Bebas Neue.</small>
+<br><small>Creme e coral sobre quase-preto, em Bebas Neue gigante.</small>
 </td>
 <td align="center" width="33%">
 <a href="./samples/creative-mode/itau-creative-mode.html"><img src="samples/creative-mode/screenshot.png" width="100%" alt="Creative Mode"></a>
 <br><b>Creative Mode</b>
-<br><small>Cream paper canvas with confident multi-color (green, pink, orange, yellow) acce...</small>
+<br><small>Tela creme com acentos multicoloridos confiantes (verde, rosa, laranja, amarelo) e Archivo Black.</small>
 </td>
 <td align="center" width="33%">
 <a href="./samples/daisy-days/itau-daisy-days.html"><img src="samples/daisy-days/screenshot.png" width="100%" alt="Daisy Days"></a>
 <br><b>Daisy Days</b>
-<br><small>Cheerful pastel deck with hand-drawn daisies, stars, and rainbows. Friendly, sof...</small>
+<br><small>Deck pastel alegre com margaridas, estrelas e arco-íris desenhados à mão. Amigável e caloroso.</small>
 </td>
 </tr>
 <tr>
 <td align="center" width="33%">
 <a href="./samples/editorial-tri-tone/itau-editorial-tri-tone.html"><img src="samples/editorial-tri-tone/screenshot.png" width="100%" alt="Editorial Tri-Tone"></a>
 <br><b>Editorial Tri-Tone</b>
-<br><small>Three-color editorial system: dusty pink, mustard cream, and deep burgundy, set ...</small>
+<br><small>Sistema editorial tricromático: rosa empoeirado, mostarda creme e bordô, em Bricolage + Instrument Serif.</small>
 </td>
 <td align="center" width="33%">
 <a href="./samples/grove/itau-grove.html"><img src="samples/grove/screenshot.png" width="100%" alt="Grove"></a>
 <br><b>Grove</b>
-<br><small>Forest-green canvas with cream type, classical Playfair serifs, and a single rus...</small>
+<br><small>Tela verde-floresta com tipo creme, serifas Playfair clássicas e único acento ferrugem.</small>
 </td>
 <td align="center" width="33%">
 <a href="./samples/long-table/itau-long-table.html"><img src="samples/long-table/screenshot.png" width="100%" alt="Long Table"></a>
 <br><b>Long Table</b>
-<br><small>Warm cream and rust-red supper-club aesthetic with bold uppercase grotesk headli...</small>
+<br><small>Estética supper-club em creme e vermelho-ferrugem, com grotesk maiúsculo bold e Fraunces itálico.</small>
 </td>
 </tr>
 <tr>
 <td align="center" width="33%">
 <a href="./samples/mat/itau-mat.html"><img src="samples/mat/screenshot.png" width="100%" alt="Mat"></a>
 <br><b>Mat</b>
-<br><small>Dark sage canvas with bone paper and burnt-orange accent; mid-century modern wit...</small>
+<br><small>Tela sálvia escura com papel bone e acento laranja queimado; mid-century moderno com tons de madeira.</small>
 </td>
 <td align="center" width="33%">
 <a href="./samples/monochrome/itau-monochrome.html"><img src="samples/monochrome/screenshot.png" width="100%" alt="Monochrome"></a>
 <br><b>Monochrome</b>
-<br><small>Ivory ledger paper with all-black type; Lora serif headlines, Jost body, no colo...</small>
+<br><small>Papel ledger marfim com tipo all-black; serifas Lora nos títulos, Jost no corpo, zero cor.</small>
 </td>
 <td align="center" width="33%">
 <a href="./samples/neo-grid-bold/itau-neo-grid-bold.html"><img src="samples/neo-grid-bold/screenshot.png" width="100%" alt="Neo-Grid Bold"></a>
 <br><b>Neo-Grid Bold</b>
-<br><small>Editorial neo-brutalism with a single neon yellow accent on off-white paper.</small>
+<br><small>Neo-brutalismo editorial com único acento amarelo neon em papel off-white.</small>
 </td>
 </tr>
 <tr>
 <td align="center" width="33%">
-<a href="./samples/peoples-platform/itau-peoples-platform.html"><img src="samples/peoples-platform/screenshot.png" width="100%" alt="People's Platform (Block & Bold)"></a>
-<br><b>People's Platform (Block & Bold)</b>
-<br><small>Activist poster energy: blue, orange, red on cream, with Alfa Slab + Caveat Brus...</small>
+<a href="./samples/peoples-platform/itau-peoples-platform.html"><img src="samples/peoples-platform/screenshot.png" width="100%" alt="People's Platform"></a>
+<br><b>People's Platform</b>
+<br><small>Energia de pôster ativista: azul, laranja e vermelho em creme, com Alfa Slab + Caveat Brush.</small>
 </td>
 <td align="center" width="33%">
 <a href="./samples/pin-and-paper/itau-pin-and-paper.html"><img src="samples/pin-and-paper/screenshot.png" width="100%" alt="Pin & Paper"></a>
-<br><b>Pin & Paper</b>
-<br><small>Yellow paper with safety-pin illustrations, ink-blue handwritten Caveat, paper-g...</small>
+<br><b>Pin &amp; Paper</b>
+<br><small>Papel amarelo com ilustrações de alfinetes, Caveat azul manuscrito e textura de grão de papel.</small>
 </td>
 <td align="center" width="33%">
-<a href="./samples/pink-script/itau-pink-script.html"><img src="samples/pink-script/screenshot.png" width="100%" alt="Pink Script — After Hours"></a>
+<a href="./samples/pink-script/itau-pink-script.html"><img src="samples/pink-script/screenshot.png" width="100%" alt="Pink Script"></a>
 <br><b>Pink Script — After Hours</b>
-<br><small>Black canvas, hot pink accent, pearl-cream paper, Instrument Serif headlines: la...</small>
+<br><small>Tela preta, acento rosa quente, papel pérola, Instrument Serif nos títulos: luxo editorial noturno.</small>
 </td>
 </tr>
 <tr>
 <td align="center" width="33%">
 <a href="./samples/playful/itau-playful.html"><img src="samples/playful/screenshot.png" width="100%" alt="Playful"></a>
 <br><b>Playful</b>
-<br><small>Sun-warm peach background with Syne display: a friendly indie launch deck.</small>
+<br><small>Fundo pêssego solar com Syne display: deck indie de lançamento amigável.</small>
 </td>
 <td align="center" width="33%">
 <a href="./samples/raw-grid/itau-raw-grid.html"><img src="samples/raw-grid/screenshot.png" width="100%" alt="Raw Grid"></a>
 <br><b>Raw Grid</b>
-<br><small>Neo-brutalist deck with thick borders, offset shadows, and a pink/sage/ink palet...</small>
+<br><small>Deck neo-brutalista com bordas espessas, sombras offset e paleta rosa/sálvia/tinta.</small>
 </td>
 <td align="center" width="33%">
 <a href="./samples/retro-windows/itau-retro-windows.html"><img src="samples/retro-windows/screenshot.png" width="100%" alt="Retro Windows"></a>
 <br><b>Retro Windows</b>
-<br><small>Windows 95 chrome: gray title bars, MS Sans Serif, pixel typography, full nostal...</small>
+<br><small>Chrome do Windows 95: barras de título cinza, MS Sans Serif, tipografia pixel, pura nostalgia.</small>
 </td>
 </tr>
 <tr>
 <td align="center" width="33%">
 <a href="./samples/retro-zine/itau-retro-zine.html"><img src="samples/retro-zine/screenshot.png" width="100%" alt="Retro Zine"></a>
 <br><b>Retro Zine</b>
-<br><small>Beige paper with green accent and Bebas Neue + Caveat: a riso-printed zine in HT...</small>
+<br><small>Papel bege com acento verde e Bebas Neue + Caveat: um zine riso-impresso em forma de HTML.</small>
 </td>
 <td align="center" width="33%">
 <a href="./samples/sakura-chroma/itau-sakura-chroma.html"><img src="samples/sakura-chroma/screenshot.png" width="100%" alt="Sakura Chroma"></a>
 <br><b>Sakura Chroma</b>
-<br><small>Vintage Japanese cassette-package aesthetic: cream paper, diagonal rainbow ribbo...</small>
+<br><small>Estética de embalagem cassete japonesa vintage: papel creme, fitas diagonais, tipo bold condensado.</small>
 </td>
 <td align="center" width="33%">
 <a href="./samples/scatterbrain/itau-scatterbrain.html"><img src="samples/scatterbrain/screenshot.png" width="100%" alt="Scatterbrain"></a>
 <br><b>Scatterbrain</b>
-<br><small>Post-it inspired: pastel sticky notes, Caveat handwriting, Shrikhand and Zilla S...</small>
+<br><small>Inspirado em post-its: notas adesivas pastel, Caveat manuscrito, Shrikhand e Zilla Slab.</small>
 </td>
 </tr>
 <tr>
 <td align="center" width="33%">
 <a href="./samples/signal/itau-signal.html"><img src="samples/signal/screenshot.png" width="100%" alt="Signal"></a>
 <br><b>Signal</b>
-<br><small>Deep navy canvas with bone paper and a single muted-gold accent; institutional w...</small>
+<br><small>Tela azul profundo com papel bone e único acento dourado-suave; institucional com peso silencioso.</small>
 </td>
 <td align="center" width="33%">
 <a href="./samples/soft-editorial/itau-soft-editorial.html"><img src="samples/soft-editorial/screenshot.png" width="100%" alt="Soft Editorial"></a>
 <br><b>Soft Editorial</b>
-<br><small>Cormorant Garamond serif on warm paper with sage, blush, and lemon accents.</small>
+<br><small>Cormorant Garamond serif em papel quente com acentos sálvia, blush e limão.</small>
 </td>
 <td align="center" width="33%">
 <a href="./samples/stencil-tablet/itau-stencil-tablet.html"><img src="samples/stencil-tablet/screenshot.png" width="100%" alt="Stencil & Tablet"></a>
-<br><b>Stencil & Tablet</b>
-<br><small>Bone paper with stencil-cut headlines and a six-color earth palette: archaeology...</small>
+<br><b>Stencil &amp; Tablet</b>
+<br><small>Papel bone com títulos em estêncil e paleta de seis tons terrosos: arqueologia encontra a marca.</small>
 </td>
 </tr>
 <tr>
 <td align="center" width="33%">
 <a href="./samples/studio/itau-studio.html"><img src="samples/studio/screenshot.png" width="100%" alt="Studio"></a>
 <br><b>Studio</b>
-<br><small>Black canvas with electric-yellow type; high-voltage design studio aesthetic.</small>
+<br><small>Tela preta com tipo amarelo elétrico; estética de estúdio de design de alta voltagem.</small>
 </td>
 <td align="center" width="33%">
 <a href="./samples/vellum/itau-vellum.html"><img src="samples/vellum/screenshot.png" width="100%" alt="Vellum"></a>
 <br><b>Vellum</b>
-<br><small>Deep navy canvas with warm-yellow italic Cormorant serifs and a single dusty tea...</small>
+<br><small>Tela azul-profundo com Cormorant itálico amarelo-quente e único acento azul-empoeirado. Estética acadêmica.</small>
 </td>
 <td width="33%"></td>
 </tr>
 </table>
 
 ---
+
 ## Licença
 
 [MIT](./LICENSE)
